@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desafio clase 5: objetos</title>
+    <title>Desafio clase 8: DOM</title>
     <!-- Fuentes -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
@@ -81,7 +81,7 @@
                     </select>
                 </div>
                 <div class="form-input p-2 flex-fill">
-                        <a href="#">Consulta reserva</a>
+                        <a href="reserva.html">Consulta reserva</a>
                 </div>
             </form>
         </div>
@@ -168,82 +168,11 @@
             </div>
         </section>
         <!-- Departamentos -->
-        <section class="row row-cols-1 row-cols-md-3">
-            <article class="col mb-4">
-                <div class="card h-100">
-                    <img src="https://via.placeholder.com/300x250?text=depto1" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Departamento 1</h5>
-                        <ul class="card-text">
-                            <li>Hambientes</li>
-                            <li>Ocupantes</li>
-                            <li>Habitaciones</li>
-                            <li>Baños</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary">Reservar</a>
-                    </div>
-                </div>
-            </article>
-            <article class="col mb-4">
-                <div class="card h-100">
-                    <img src="https://via.placeholder.com/300x250?text=depto2" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Departamento 2</h5>
-                        <ul class="card-text">
-                            <li>Hambientes</li>
-                            <li>Ocupantes</li>
-                            <li>Habitaciones</li>
-                            <li>Baños</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary">Reservar</a>                    
-                    </div>
-                </div>
-            </article>
-            <article class="col mb-4">
-                <div class="card h-100">
-                    <img src="https://via.placeholder.com/300x250?text=depto3" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Departamento 3</h5>
-                        <ul class="card-text">
-                            <li>Hambientes</li>
-                            <li>Ocupantes</li>
-                            <li>Habitaciones</li>
-                            <li>Baños</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary">Reservar</a>                    
-                    </div>
-                </div>
-            </article>
-            <article class="col mb-4">
-                <div class="card h-100">
-                    <img src="https://via.placeholder.com/300x250?text=depto4" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Departamento 4</h5>
-                        <ul class="card-text">
-                            <li>Hambientes</li>
-                            <li>Ocupantes</li>
-                            <li>Habitaciones</li>
-                            <li>Baños</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary">Reservar</a>                    
-                    </div>
-                </div>
-            </article>
-            <article class="col mb-4">
-                <div class="card h-100">
-                    <img src="https://via.placeholder.com/300x250?text=depto5" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Departamento 5</h5>
-                        <ul class="card-text">
-                            <li>Hambientes</li>
-                            <li>Ocupantes</li>
-                            <li>Habitaciones</li>
-                            <li>Baños</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary">Reservar</a>                    
-                    </div>
-                </div>
-            </article>
+        <section>
+            <h2 class="text-center">NUESTROS DEPARTAMENTOS</h2>
+            <div id="deptos" class="row row-cols-1 row-cols-md-3">
+                <!-- aca van los deptos creados con JS -->
+            </div>
         </section>
     </main>
     <footer>
