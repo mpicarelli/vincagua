@@ -1,0 +1,17 @@
+{
+  "name": "complejo-departamentos",
+  "version": "1.0.0",
+  "description": "Proyecto final de la camada 14365 curso\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;6D\u001b[1;6D\u001b[D\u001b[Dl curso de JAVASCRIPT Camada 14365. Se trata de una webapp para poder reservar en un complejo de departamentos turisticos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss scss/style.scss css/style.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "author": "Maximiliano Picarelli",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.7"
+  }
+}
