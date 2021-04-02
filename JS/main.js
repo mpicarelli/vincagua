@@ -1,5 +1,5 @@
 //VARIABLES
-
+let cantHuesped = Number(prompt("cuantas personas se van a hospedar"));
 
 //defino constructor de departamentos
 
@@ -12,7 +12,6 @@ class Depto {
     }
     
     capacidad(){
-        let cantHuesped = Number(prompt("cuantas personas se van a hospedar"));
         if (cantHuesped > this.personas){
             return false
         } else {
@@ -25,26 +24,17 @@ class Depto {
             return true
         }
     }
-    /* disponibilidad(){
-        if (deptoNumero == this.numero){
-            if(this.disponible == false){
-                alert("Este Depto no esta disponible. Por favor elija otro");
-            } else {
-                this.disponible = false;
-                alert("Felicitaciones! ya tiene su reserva");
-            } 
-        }
-    } */
 }
 
 //objetos departamentos
 const departamentos = [];
-departamentos.push (new Depto (1, 2, 1500, false));
-departamentos.push (new Depto (2, 2, 1500, false));
+departamentos.push (new Depto (1, 2, 1500, true));
+departamentos.push (new Depto (2, 2, 1500, true));
 departamentos.push (new Depto (3, 3, 2500, true));
 departamentos.push (new Depto (4, 4, 3000, true));
-departamentos.push (new Depto (5, 5, 3500, true));
+departamentos.push (new Depto (5, 6, 3500, true));
 
+localStorage.setItem("departamentos", JSON.stringify(departamentos));
 
 //RESERVAR
 
@@ -68,11 +58,12 @@ function reservar (){
     }
 }
 
-reservar();
+//reservar();
 
 //DOM DEPARTAMENTOS
+const disponibles = departamentos.filter(Depto => Depto.personas >= cantHuesped);
 
-departamentos.forEach( dto => {
+disponibles.forEach( dto => {
     let article = document.createElement('article');
     article.setAttribute('class','col mb-4')
     
@@ -82,7 +73,7 @@ departamentos.forEach( dto => {
     
     let img     = document.createElement('img')
     div.appendChild(img);
-    img.setAttribute('src','https://via.placeholder.com/300x250?text=depto1')
+    img.setAttribute('src',`https://via.placeholder.com/300x250?text=depto${dto.numero}`)
     img.setAttribute('class','card-img-top')
     
     let divCard = document.createElement('div');
