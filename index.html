@@ -46,32 +46,22 @@
             </nav>
         </div>
         <!-- barra de reservas -->
-        <div class="bg-light border-top border-secondary">
-            <form action="" method="POST" class="container d-flex justify-content-around px-0">
-                <div class="p-2 flex-fill border-right border-secondary">
+        <div class="form-fechas">
+            <form action="" method="POST" class="d-flex justify-content-around px-0">
+                <div class="p-2 flex-fill fecha-in">
                     <label for="check-in">Fecha de llegada:</label>
                     <input type="date" id="check-in" name="trip-start"
                     value="2021-07-22"
                     min="2021-01-01" max="2022-12-31">
                 </div>
-                <div class="p-2 flex-fill border-right border-secondary">
+                <div class="p-2 flex-fill fecha-out">
                     <label for="check-out">Fecha de salida:</label>
                     <input type="date" id="check-out" name="trip-end"
                     value="2021-07-22"
                     min="2021-01-01" max="2022-12-31">
                 </div>
-                <!-- <div class="form-input p-2 flex-fill border-right border-secondary" >
-                    <p>Departamento</p>
-                    <select class="" name="depto" id="depto" required>
-                        <option value="1">Departamento 1</option>
-                        <option value="2">Departamento 2</option>
-                        <option value="3">Departamento 3</option>
-                        <option value="4">Departamento 4</option>
-                        <option value="5">Departamento 5</option>
-                    </select>
-                </div> -->
-                <div class="form-input p-2 flex-fill border-right border-secondary" >
-                    <p>Huespedes</p>
+                <div class="form-input p-2 flex-fill select-huespedes" >
+                    <label for="huespedes">Huespedes</label>
                     <select class="" name="huespedes" id="huespedes" required>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -142,24 +132,24 @@
             <h2 class="text-center">Servicios</h2>
             <div class="row">
                 <article class="col-12 col-md-6 col-lg-4">
-                    <h4>servicio 1</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores omnis, quis ex tempore atque ab architecto ipsum aut quae, enim labore dolores eos, corporis sequi nam mollitia nihil repellendus doloribus!</p>
+                    <h4>Cocina completa</h4>
+                    <p>Todos los departamentos cuentan con cocina completa con heladera. En los monohambientes se dispondra de un anafe a gas con horno electrico y en los restantes cocina a gas.</p>
                 </article>
                 <article class="col-12 col-md-6 col-lg-4">
-                    <h4>servicio 2</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores omnis, quis ex tempore atque ab architecto ipsum aut quae, enim labore dolores eos, corporis sequi nam mollitia nihil repellendus doloribus!</p>
+                    <h4>Baños privados</h4>
+                    <p>Todos los departamentos cuentan con baños privados con ducha, bañadera con hidromasaje y bidet.</p>
                 </article>
                 <article class="col-12 col-md-6 col-lg-4">
-                    <h4>servicio 3</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores omnis, quis ex tempore atque ab architecto ipsum aut quae, enim labore dolores eos, corporis sequi nam mollitia nihil repellendus doloribus!</p>
+                    <h4>WiFi gratis</h4>
+                    <p>El complejo cuenta con wi-fi gratuito en zonas comunes y en cada departamento.</p>
                 </article>
                 <article class="col-12 col-md-6 col-lg-4">
-                    <h4>servicio 4</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores omnis, quis ex tempore atque ab architecto ipsum aut quae, enim labore dolores eos, corporis sequi nam mollitia nihil repellendus doloribus!</p>
+                    <h4>TV HD</h4>
+                    <p>Todos los departamentos cuentan con television por cable HD y televisores smart-tv para que puedas relajarte a la noche viendo las series y peliculas que mas te gustan.</p>
                 </article>
                 <article class="col-12 col-md-6 col-lg-4">
-                    <h4>servicio 5</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores omnis, quis ex tempore atque ab architecto ipsum aut quae, enim labore dolores eos, corporis sequi nam mollitia nihil repellendus doloribus!</p>
+                    <h4>Climatizacion</h4>
+                    <p>Cada departamento cuenta con aire acondicionado frio/calor en cada hambiente y termotanque a gas asegurando la temperatura correcta del agua.</p>
                 </article>
                 <article class="col-12 col-md-6 col-lg-4">
                     <h4>servicio 6</h4>
@@ -169,7 +159,7 @@
         </section>
         <!-- Departamentos -->
         <section>
-            <h2 class="text-center">DEPARTAMENTOS DISPONIBLES</h2>
+            <h2 class="text-center">DEPARTAMENTOS</h2>
             <div id="deptos" class="row row-cols-1 row-cols-md-3">
                 <!-- aca van los deptos creados con JS -->
             </div>
@@ -181,7 +171,7 @@
                 <h5>Contactanos</h5>
                 <ul>
                     <li>Telefono</li>
-                    <li>Whatsall</li>
+                    <li>Whatsapp</li>
                     <li>Direccion</li>
                     <li>Mail</li>
                 </ul>

@@ -1,4 +1,4 @@
-/*
+/*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
  * Copyright 2011-2020 Twitter, Inc.
@@ -7162,3 +7162,24 @@ h1, h2, h3, h4, a {
 
 body {
   background-color: #d4dce9; }
+
+header {
+  padding-bottom: 0.2rem; }
+
+.fa-building {
+  font-size: 3rem;
+  line-height: 3.5rem; }
+
+.form-fechas {
+  background-color: #f2f2f2;
+  border: 0.5px solid gray;
+  margin: 0 0.2rem;
+  box-shadow: 1px 1px gray;
+  height: 50px; }
+  .form-fechas .fecha-in, .form-fechas .fecha-out, .form-fechas .select-huespedes {
+    box-shadow: 1px 1px gray;
+    text-align: center; }
+  .form-fechas .reserva {
+    background-color: #18186e; }
+    .form-fechas .reserva a {
+      color: white; }
