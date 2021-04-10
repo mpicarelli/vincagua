@@ -112,10 +112,10 @@ departamentos.forEach( dto => {
 
 
 //Mostrar estado de los departamentos post reserva
-for (i=0; i<departamentos.length; i++){
+/* for (i=0; i<departamentos.length; i++){
     if(departamentos[i].disponible){
         console.log("Departamento " + departamentos[i].numero + " disponible")
     } else {
         console.log("Departamento " + departamentos[i].numero + " ocupado")
     }
-}
+} */
