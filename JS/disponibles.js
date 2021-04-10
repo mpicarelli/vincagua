@@ -1,8 +1,16 @@
-//DOM DEPARTAMENTOS
-const departamentoStorage = JSON.parse(localStorage.getItem('departamentos'));
-const disponibles = departamentoStorage.filter(Depto => Depto.disponible == true);
+//recupero de local storage el array de deptos que puedo alquilar y la cantidad de huespedes
 
-disponibles.forEach( dto => {
+const deptoCapOK = JSON.parse(localStorage.getItem('capacidadOK'));
+const showCantHuesped = JSON.parse(localStorage.getItem('huespedes'));
+
+// DOM CANTIDAD DE HUESPESDES
+let h5Huesped = document.createElement('h5');
+h5Huesped.textContent = `Cantidad de huespedes: ${showCantHuesped}`;
+document.querySelector('#cantHuespedes').appendChild(h5Huesped)
+
+//DOM DEPARTAMENTOS PARA ALQUILAR
+
+deptoCapOK.forEach( dto => {
     let article = document.createElement('article');
     article.setAttribute('class','col mb-4')
     
@@ -48,3 +56,4 @@ disponibles.forEach( dto => {
     
     document.querySelector("#deptos").appendChild(article)
 })
+
