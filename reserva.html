@@ -49,14 +49,32 @@
     <main>
         <section class="container">
             <h2 class="text-center">deptos disponibles</h2>
-            <h4>Estos son los departamentos que podes alquilar segun la cantidad de huespedes ingresada</h4>
-            <div id="cantHuespedes">
+            <article id="cuadroReserva">
+                <h5>Estadia</h5>
+                <div id="check-in">
+                    <h6>Check In</h6>
+                    
+                </div>
+                <hr>
+                <div id="check-out">
+                    <h6 >Check Out</h6>
+                    
+                </div>
+                <hr>
+                <div id="cantHuespedes">
+                    <H6>Huespedes:</H6>
                 
-            </div>
+                </div>
+                <hr>
+            </article>
             <div id="deptos" class="row row-cols-1 row-cols-md-3">
-            <!-- aca van los deptos creados con JS y filtrados por disponibles -->
+                <!-- aca van los deptos creados con JS y filtrados por disponibles -->
             </div>
-    </main>
+            <div>
+                <h6>Su total es:</h6>
+            </div>
+            <a href="#" class="btn btn-primary my-3">RESERVAR</a>
+        </main>
     <script src="js/disponibles.js"></script>
 </body>
 </html>

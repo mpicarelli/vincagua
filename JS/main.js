@@ -24,6 +24,8 @@ localStorage.setItem("departamentos", JSON.stringify(departamentos));
 departamentos.forEach( dto => {
     let article = document.createElement('article');
         article.setAttribute('class','col mb-4')
+        article.setAttribute('data-id', `${dto.numero}`)
+
     
     let div     = document.createElement('div');
         article.appendChild(div)
@@ -58,11 +60,14 @@ departamentos.forEach( dto => {
     let li3     = document.createElement('li');
         ul.appendChild(li3);
         li3.textContent=`Precio por noche: $${dto.precio}`;
+    let spanPrecio = document.createElement('span')
+    li3.appendChild(spanPrecio);
+    spanPrecio.textContent = `${dto.precio}`
     
     let alink   = document.createElement('a');
         divCard.appendChild(alink);
         alink.setAttribute('href','#');
-        alink.setAttribute('class','btn btn-primary');
+        alink.setAttribute('class','btn btn-primary reservar');
         alink.textContent="RESERVAR"
     
     document.querySelector("#deptos").appendChild(article)
@@ -80,4 +85,19 @@ function verifCapacidad (e){
     localStorage.setItem("huespedes",JSON.stringify(huespedElegidos));
 }
 
+// tomo valores de checkin y checkout
+const checkIn = document.querySelector('#checkin');
+checkIn.addEventListener('input',guardaCheckIn)
 
+function guardaCheckIn (e) {
+    const checkInValue = e.target.value;
+    localStorage.setItem("checkin", JSON.stringify(checkInValue));
+}
+
+const checkOut = document.querySelector('#checkout');
+checkOut.addEventListener('input',guardaCheckOut);
+
+function guardaCheckOut (e) {
+    const checkOutValue = e.target.value;
+    localStorage.setItem("checkout", JSON.stringify(checkOutValue));
+}

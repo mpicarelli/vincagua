@@ -1,18 +1,34 @@
-//recupero de local storage el array de deptos que puedo alquilar y la cantidad de huespedes
+//recupero datos del local storage
 
-const deptoCapOK = JSON.parse(localStorage.getItem('capacidadOK'));
+const deptoCapOK      = JSON.parse(localStorage.getItem('capacidadOK'));
 const showCantHuesped = JSON.parse(localStorage.getItem('huespedes'));
+const showCheckIn     = JSON.parse(localStorage.getItem('checkin'));
+const showCheckOut    = JSON.parse(localStorage.getItem('checkout'));
+
+
 
 // DOM CANTIDAD DE HUESPESDES
 let h5Huesped = document.createElement('h5');
-h5Huesped.textContent = `Cantidad de huespedes: ${showCantHuesped}`;
+h5Huesped.textContent = `${showCantHuesped}`;
 document.querySelector('#cantHuespedes').appendChild(h5Huesped)
+
+
+//DOM CHECK IN
+let h6CheckIn = document.createElement('h6');
+h6CheckIn.textContent = `${showCheckIn}`;
+document.querySelector('#check-in').appendChild(h6CheckIn)
+
+//DOM CHECK OUT
+let h6CheckOut = document.createElement('h6');
+h6CheckOut.textContent = `${showCheckOut}`;
+document.querySelector('#check-out').appendChild(h6CheckOut)
 
 //DOM DEPARTAMENTOS PARA ALQUILAR
 
 deptoCapOK.forEach( dto => {
     let article = document.createElement('article');
     article.setAttribute('class','col mb-4')
+    article.setAttribute('data-id', `${dto.numero}`)
     
     let div     = document.createElement('div');
     article.appendChild(div)
@@ -46,14 +62,40 @@ deptoCapOK.forEach( dto => {
     
     let li3     = document.createElement('li');
     ul.appendChild(li3);
-    li3.textContent=`Precio por noche: $${dto.precio}`;
+    li3.textContent=`Precio por noche: $`;
+
+    let spanPrecio = document.createElement('span')
+    li3.appendChild(spanPrecio);
+    spanPrecio.textContent = `${dto.precio}`
     
     let alink   = document.createElement('a');
     divCard.appendChild(alink);
     alink.setAttribute('href','#');
-    alink.setAttribute('class','btn btn-primary');
+    alink.setAttribute('class','btn btn-primary reservar');
     alink.textContent="RESERVAR"
     
     document.querySelector("#deptos").appendChild(article)
 })
 
+//calculo de monto a pagar
+
+const deptosDisponibles = document.querySelector('#deptos');
+deptosDisponibles.addEventListener('click', elijoDepto);
+
+function elijoDepto(e){
+    e.preventDefault();
+    if(e.target.classList.contains('reservar')){
+        const cardDepto = e.target.parentElement
+        let precio = cardDepto.querySelector('ul li span').textContent
+        console.log(precio)
+        return precio
+    }
+}
+
+
+/* function montoTotal (showCheckIn, showCheckOut, precio){
+    let estadia = Number(showCheckOut) - Number(showCheckIn)
+    console.log(estadia)
+    let total = estadia * precio
+    return total
+}  */
