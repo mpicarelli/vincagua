@@ -5,8 +5,6 @@ const showCantHuesped = JSON.parse(localStorage.getItem('huespedes'));
 const showCheckIn     = JSON.parse(localStorage.getItem('checkin'));
 const showCheckOut    = JSON.parse(localStorage.getItem('checkout'));
 
-
-
 // DOM CANTIDAD DE HUESPESDES
 let h5Huesped = document.createElement('h5');
 h5Huesped.textContent = `${showCantHuesped}`;
@@ -63,7 +61,7 @@ deptoCapOK.forEach( dto => {
     let li3     = document.createElement('li');
     ul.appendChild(li3);
     li3.textContent=`Precio por noche: $`;
-
+    
     let spanPrecio = document.createElement('span')
     li3.appendChild(spanPrecio);
     spanPrecio.textContent = `${dto.precio}`
@@ -73,6 +71,7 @@ deptoCapOK.forEach( dto => {
     alink.setAttribute('href','#');
     alink.setAttribute('class','btn btn-primary reservar');
     alink.textContent="RESERVAR"
+    alink.setAttribute('data-id', `${dto.numero}`)
     
     document.querySelector("#deptos").appendChild(article)
 })
@@ -82,20 +81,38 @@ deptoCapOK.forEach( dto => {
 const deptosDisponibles = document.querySelector('#deptos');
 deptosDisponibles.addEventListener('click', elijoDepto);
 
+// veo que boton toque
 function elijoDepto(e){
     e.preventDefault();
     if(e.target.classList.contains('reservar')){
-        const cardDepto = e.target.parentElement
-        let precio = cardDepto.querySelector('ul li span').textContent
-        console.log(precio)
-        return precio
+        const cardDepto = e.target.parentElement.parentElement.parentElement;
+        obtenerPrecioDepto(cardDepto);
     }
 }
 
+// me da el precio y el ID del depto (por ahora el ID no lo uso)
+function obtenerPrecioDepto(card){ 
+    const precioDeptos = {
+        precio: Number(card.querySelector('div ul li span').textContent),
+        id: card.querySelector('a').dataset.id
+    }
+    
+    montoTotal (precioDeptos);
+}
 
-/* function montoTotal (showCheckIn, showCheckOut, precio){
-    let estadia = Number(showCheckOut) - Number(showCheckIn)
-    console.log(estadia)
-    let total = estadia * precio
-    return total
-}  */
+//hace la cuenta de diferencia de dias * precio unitario depto
+function montoTotal (precioDepto){
+    let checkInParse  = Date.parse(showCheckIn)/(1000*60*60*24);
+    let checkOutParse = Date.parse(showCheckOut)/(1000*60*60*24);
+    let diff          = Number(checkOutParse - checkInParse);
+    let total         = diff * precioDepto.precio;
+    //console.log(`diferencia dias ${diff}`);
+    //console.log(`monto total ${total}`);
+    //return total
+    let h6TotalReserva = document.createElement('h6');
+    h6TotalReserva.textContent = `$${total}`;
+    document.querySelector('#totalReserva').appendChild(h6TotalReserva)
+} 
+
+//DOM CHECK OUT
+
