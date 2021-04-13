@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desafio clase 8: DOM</title>
+    <title>Proyecto final: 2da pre-entrega</title>
     <!-- Fuentes -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
@@ -48,30 +48,31 @@
     </header>
     <main>
         <section class="container">
-            <h2 class="text-center">deptos disponibles</h2>
+            <h2 class="text-center">Comlete su reserva</h2>
             <article id="cuadroReserva">
                 <h5>Estadia</h5>
-                <div id="check-in">
-                    <h6>Check In</h6>
+                <div class="d-flex justify-content-around">
+                    <div id="check-in">
+                        <h6>Check In</h6>
+                        
+                    </div>
+                    <div id="check-out">
+                        <h6 >Check Out</h6>
+                        
+                    </div>
+                    <div id="cantHuespedes">
+                        <H6>Huespedes:</H6>
                     
-                </div>
-                <hr>
-                <div id="check-out">
-                    <h6 >Check Out</h6>
-                    
-                </div>
-                <hr>
-                <div id="cantHuespedes">
-                    <H6>Huespedes:</H6>
-                
+                    </div>
                 </div>
                 <hr>
             </article>
+            <h5>Por favor, elija uno de los siguientes departamentos para poder continuar su reserva</h5>
             <div id="deptos" class="row row-cols-1 row-cols-md-3">
                 <!-- aca van los deptos creados con JS y filtrados por disponibles -->
             </div>
             <div id="totalReserva">
-                <h6>Su total es:</h6>
+            
             </div>
             <a href="#" class="btn btn-primary my-3">confirmar</a>
         </main>

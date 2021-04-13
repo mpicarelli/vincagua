@@ -109,10 +109,11 @@ function montoTotal (precioDepto){
     //console.log(`diferencia dias ${diff}`);
     //console.log(`monto total ${total}`);
     //return total
-    let h6TotalReserva = document.createElement('h6');
-    h6TotalReserva.textContent = `$${total}`;
-    document.querySelector('#totalReserva').appendChild(h6TotalReserva)
+    muestraTotal (total)
 } 
-
-//DOM CHECK OUT
-
+function muestraTotal(total){
+    document.querySelector('#totalReserva').innerHTML = ''
+    let h5TotalReserva = document.createElement('h5');
+    h5TotalReserva.textContent = `El costo total de su estadia es: $${total}.`;
+    document.querySelector('#totalReserva').appendChild(h5TotalReserva)
+}

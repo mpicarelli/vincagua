@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desafio clase 8: DOM</title>
+    <title>Proyecto final: 2da pre-entrega</title>
     <!-- Fuentes -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
@@ -50,15 +50,15 @@
             <form action="" method="POST" class="d-flex justify-content-around px-0">
                 <div class="p-2 flex-fill fecha-in">
                     <label for="checkin">Fecha de llegada:</label>
+                    <!-- cambiar atributo min con JS segun que fecha sea hoy -->
                     <input type="date" id="checkin" name="trip-start"
-                    value="2021-07-22"
-                    min="2021-01-01" max="2022-12-31">
+                    min="2021-01-01" max="2022-31-12" required>
                 </div>
                 <div class="p-2 flex-fill fecha-out">
                     <label for="checkout">Fecha de salida:</label>
+                    <!-- cambiar atributos min con JS segun la fecha de inicio escogida arriba asi evito tener intervalos negativos -->
                     <input type="date" id="checkout" name="trip-end"
-                    value="2021-07-22"
-                    min="2021-01-01" max="2022-12-31">
+                    min="2021-01-01" max="2022-12-31" required>
                 </div>
                 <div class="form-input p-2 flex-fill select-huespedes" >
                     <label for="huespedes">Huespedes</label>
@@ -71,6 +71,7 @@
                         <option value="5">5</option>
                     </select>
                 </div>
+                <!-- transformarlo en un submit y quiza hacer que se resalte cuando completo fechas -->
                 <div class="form-input p-2 flex-fill reserva">
                     <a href="reserva.html">Mira tu reserva</a>
                 </div>
