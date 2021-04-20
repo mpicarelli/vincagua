@@ -50,15 +50,14 @@
             <form action="" method="POST" class="d-flex justify-content-around px-0">
                 <div class="p-2 flex-fill fecha-in">
                     <label for="checkin">Fecha de llegada:</label>
-                    <!-- cambiar atributo min con JS segun que fecha sea hoy -->
-                    <input type="date" id="checkin" name="trip-start"
-                    min="2021-01-01" max="2022-31-12" required>
+                    <input type="text" id="checkin" name="trip-start"
+                    max="2022-31-12" placeholder="elija una fecha" onfocus="(this.type='date')" onblur="(this.type='text')" required>
                 </div>
                 <div class="p-2 flex-fill fecha-out">
                     <label for="checkout">Fecha de salida:</label>
                     <!-- cambiar atributos min con JS segun la fecha de inicio escogida arriba asi evito tener intervalos negativos -->
-                    <input type="date" id="checkout" name="trip-end"
-                    min="2021-01-01" max="2022-12-31" required>
+                    <input type="text" id="checkout" name="trip-end"
+                    max="2022-31-12" placeholder="elija una fecha" onfocus="(this.type='date')" onblur="(this.type='text')" required>
                 </div>
                 <div class="form-input p-2 flex-fill select-huespedes" >
                     <label for="huespedes">Huespedes</label>
@@ -193,8 +192,12 @@
             <p class="text-light py-3 mb-0 text-center">Vincagua Departamentos - Todos los derechos reservados</p>
         </div>
     </footer>
+    <script src="js/moment-with-locales.min.js"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>
 </html>

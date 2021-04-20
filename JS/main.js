@@ -25,7 +25,6 @@ departamentos.forEach( dto => {
     let article = document.createElement('article');
         article.setAttribute('class','col mb-4')
         
-        
         let div     = document.createElement('div');
         article.appendChild(div)
         div.setAttribute('class','card h-100')
@@ -58,7 +57,7 @@ departamentos.forEach( dto => {
         
         let li3     = document.createElement('li');
         ul.appendChild(li3);
-        li3.textContent=`Precio por noche: $${dto.precio}`;
+        li3.textContent=`Precio por noche: $`;
         let spanPrecio = document.createElement('span')
         li3.appendChild(spanPrecio);
         spanPrecio.textContent = `${dto.precio}`
@@ -85,15 +84,26 @@ function verifCapacidad (e){
     localStorage.setItem("huespedes",JSON.stringify(huespedElegidos));
 }
 
-// tomo valores de checkin y checkout
-const checkIn = document.querySelector('#checkin');
-checkIn.addEventListener('input',guardaCheckIn)
 
-function guardaCheckIn (e) {
-    const checkInValue = e.target.value;
+// Fecha minima en fecha de llegada → hoy;
+let today = moment().format("YYYY-MM-D");
+document.querySelector('#checkin').setAttribute('min', today)
+
+
+
+// tomo valores de checkin
+let checkIn = document.querySelector('#checkin');
+checkIn.addEventListener('input',guardaCheckIn);
+
+
+function guardaCheckIn(e){
+    let checkInValue =e.target.value;
     localStorage.setItem("checkin", JSON.stringify(checkInValue));
+    //uso el checkInvalue para darle un minimo a la fecha de checkout
+    document.querySelector('#checkout').setAttribute('min', checkInValue)
 }
 
+// tomo valores de checkout
 const checkOut = document.querySelector('#checkout');
 checkOut.addEventListener('input',guardaCheckOut);
 
@@ -101,3 +111,4 @@ function guardaCheckOut (e) {
     const checkOutValue = e.target.value;
     localStorage.setItem("checkout", JSON.stringify(checkOutValue));
 }
+
