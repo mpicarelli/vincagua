@@ -7,7 +7,6 @@ const showCantHuesped = JSON.parse(localStorage.getItem('huespedes'));
 const showCheckIn     = JSON.parse(localStorage.getItem('checkin'));
 const showCheckOut    = JSON.parse(localStorage.getItem('checkout'));
 
-console.log(showCheckIn)
 // DOM CANTIDAD DE HUESPESDES
 let h5Huesped = document.createElement('h5');
 h5Huesped.textContent = `${showCantHuesped}`;
@@ -15,15 +14,15 @@ document.querySelector('#cantHuespedes').appendChild(h5Huesped)
 
 
 //DOM CHECK IN
-let showCheckInM = moment(showCheckIn , "YYYY/MM/DD").format("dddd D [de] MMMM YYYY")
+let showCheckInM = moment(showCheckIn , "YYYY/MM/DD")
 let h6CheckIn = document.createElement('h6');
-h6CheckIn.textContent = `${showCheckInM}`;
+h6CheckIn.textContent = `${showCheckInM.format("dddd D [de] MMMM YYYY")}`;
 document.querySelector('#check-in').appendChild(h6CheckIn)
 
 //DOM CHECK OUT
-let showCheckOutM = moment(showCheckOut , "YYYY/MM/DD").format("dddd D [de] MMMM YYYY")
+let showCheckOutM = moment(showCheckOut , "YYYY/MM/DD")
 let h6CheckOut = document.createElement('h6');
-h6CheckOut.textContent = `${showCheckOutM}`;
+h6CheckOut.textContent = `${showCheckOutM.format("dddd D [de] MMMM YYYY")}`;
 document.querySelector('#check-out').appendChild(h6CheckOut)
 
 //DOM DEPARTAMENTOS PARA ALQUILAR
@@ -106,13 +105,8 @@ function obtenerPrecioDepto(card){
 
 //hace la cuenta de diferencia de dias * precio unitario depto
 function montoTotal (precioDepto){
-    let checkInParse  = Date.parse(showCheckIn)/(1000*60*60*24);
-    let checkOutParse = Date.parse(showCheckOut)/(1000*60*60*24);
-    let diff          = Number(checkOutParse - checkInParse);
+    let diff          = showCheckOutM.diff(showCheckInM, "days");
     let total         = diff * precioDepto.precio;
-    console.log(`diferencia dias ${diff}`);
-    //console.log(`monto total ${total}`);
-    //return total
     muestraTotal (total)
 } 
 function muestraTotal(total){
