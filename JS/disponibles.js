@@ -92,7 +92,10 @@ function elijoDepto(e){
         const cardDepto = e.target.parentElement.parentElement.parentElement;
         obtenerPrecioDepto(cardDepto);
     }
+    //para que despues de dado el evento de tocar el boton reservar en un depto se muestre el boton de confirmar que te lleva al formulario
+    showConfirmar();
 }
+
 
 // me da el precio y el ID del depto (por ahora el ID no lo uso)
 function obtenerPrecioDepto(card){ 
@@ -109,9 +112,62 @@ function montoTotal (precioDepto){
     let total         = diff * precioDepto.precio;
     muestraTotal (total)
 } 
+
+// muestra el total de la reserva
 function muestraTotal(total){
     document.querySelector('#totalReserva').innerHTML = ''
     let h5TotalReserva = document.createElement('h5');
     h5TotalReserva.textContent = `El costo total de su estadia es: $${total}.`;
     document.querySelector('#totalReserva').appendChild(h5TotalReserva)
+}
+
+//muestro boton de confirmar reserva
+function showConfirmar(){
+    let confirmar = document.createElement('a');
+    confirmar.setAttribute('class', 'btn btn-primary my-3 confirmarReserva');
+    confirmar.textContent = "CONFIRMAR"
+    document.querySelector('#totalReserva').appendChild(confirmar)
+    //formulario de confirmacion
+    showFormConfirmar();
+}
+//CUADRO DE CONFIRMACION DE RESERVA
+function showFormConfirmar(){
+    $('.confirmarReserva').click(()=> {
+        //vacio lo que ya estaba por si lo apretan  2 veces
+        $('#formReserva').html('')
+        //formulario de reserva
+        $('#formReserva').append(`
+        <h4>Confirma tu reserva </h4>
+        <form action="#">
+        <div class="row" >
+            <div class="col col-md-6">
+                <h5>Datos de contacto</h5>
+                <label for="name">Nombre*</label>
+                <input type="text" class="form-control form-control-sm" id="nombre" placeholder="Roy" required >
+                <label for="apellido">Apellido*</label>
+                <input type="text" class="form-control form-control-sm" id="apellido" placeholder="Mustang" required >
+                <label for="tel">Telefono*</label>
+                <input type="number" class="form-control form-control-sm" id="tel" placeholder="1198765432" required >
+                <label for="email">Correo Electronico*</label>
+                <input type="email" class="form-control form-control-sm" id="email" placeholder="coronelRoy@alquimista.com" required >     
+            </div>
+            <div class="col col-md-6">
+                <h5>Datos de Pago</h5>
+                <label for="nameTarjeta">Nombre (como aparece en la tarjeta)*</label>
+                <input type="text" class="form-control form-control-sm" id="nombreTarjeta" placeholder="Roy" required >
+                <label for="cardNumber">Numero de Tarjeta*</label>
+                <input type="number" class="form-control form-control-sm mb-2" id="cardNumber" placeholder="4567 9875 3215 9875" required >
+                <label for="">Fecha vencimiento</label>
+                <div class="row">
+                    <input type="number" class="form-control form-control-sm col-6 mb-2" placeholder="MM" name="" required="">
+                    <input type="number" class="form-control form-control-sm col-6 mb-2" placeholder="YY" name="" required="">
+                </div>
+                <label for="codSeg">CVV*</label>
+                <input type="number" class="form-control form-control-sm" id="codSeg" placeholder="###" required >
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Confirmar Reserva</button>
+    </form> 
+        `)
+    })
 }
