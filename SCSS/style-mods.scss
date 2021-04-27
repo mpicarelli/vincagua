@@ -1,0 +1,48 @@
+body{
+    background-color: $secondary;
+}
+
+header{
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 29%, rgba(212,220,233,1) 74%, rgba(85,114,159,1) 98%);    top:      0;
+    left:     0;
+    right:    0;
+    position: sticky;
+    z-index:  100;
+    padding-bottom: 0.2rem;
+    #navForm .nav-item {
+        .nav-link, .navbar-text{
+            text-decoration: none;
+            text-transform:  uppercase;
+            font-size:       $base-font-size * 1.2;
+            font-weight:     bold;
+            color: rgba($primary, 0.75);
+            &:hover{
+                transform:  scale(1.1);
+                color:      $primary;
+            }
+            &.active{color: $primary;}
+        }
+    }
+}
+
+.fa-building{
+    font-size: 3rem;
+    line-height: 3.5rem;
+}
+
+#formFechas{
+    background-color: #f2f2f2;
+    border: 0.5px solid gray;
+    margin: 0 0.2rem;
+    box-shadow: 1px 1px gray;
+    height: 50px;
+    .fecha-in, .fecha-out, .select-huespedes{
+        box-shadow: 1px 1px gray;
+        text-align: center;
+    }
+    .reserva{
+        background-color: #113c80;
+        a {color: white;}
+    }
+}

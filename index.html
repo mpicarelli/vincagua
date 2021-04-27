@@ -5,19 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto final: 2da pre-entrega</title>
-    <!-- Fuentes -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-    <!-- Estilos - Por ahora uso BS puro en su mayoria -->
+    <!-- FUENTES -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <!-- Estilos-->
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
     <header class="bg-white">
         <!-- barra de navegacion -->
-        <div class="container">
-            <nav class="navbar navbar-expand-md navbar-light">
+        <div class="container" id="navForm">
+            <nav class="navbar navbar-expand-md navbar-light ">
                 <a class="navbar-brand d-md-none d-flex flex-grow-1 justify-content-center" href="index.html">
-					<i class="far fa-building"></i>
+					<img src="assets/logo-svg-wide.svg" width="80px"></i>
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navegacion" aria-controls="navegacion" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -28,26 +28,26 @@
                             <a class="nav-link active" href="index.html">inicio</a>
                         </li>
                         <li class="nav-item d-flex align-items-center text-center">
-                            <a class="nav-link active" href="#">Sobre nosotros</a>
+                            <a class="nav-link" href="#about">Sobre nosotros</a>
                         </li>
                         <li class="nav-item d-flex align-items-center text-center">
-                            <a class="nav-link active" href="#">
-                                <i class="far fa-building"></i>
+                            <a class="nav-link d-none d-md-block active" href="#">
+                                <img src="assets/logo-svg-wide.svg" width="100px"></i>
                             </a>
                         </li>
                         <li class="nav-item d-flex align-items-center text-center">
-                            <a class="nav-link active" href="#">Habitaciones</a>
+                            <a class="nav-link" href="#servicios">servicios</a>
                         </li>
                         <li class="nav-item d-flex align-items-center text-center">
-                            <a class="nav-link active" href="#">Contactanos</a>
+                            <a class="nav-link" href="#deptos">departamentos</a>
                         </li>
                     </ul>
                 </div>
             </nav>
         </div>
         <!-- barra de reservas -->
-        <div class="form-fechas">
-            <form action="" method="POST" class="d-flex justify-content-around px-0">
+        <div id="formFechas">
+            <form action="reserva.html" method="POST" class="d-flex justify-content-around px-0">
                 <div class="p-2 flex-fill fecha-in">
                     <label for="checkin">Fecha de llegada:</label>
                     <input type="text" id="checkin" name="trip-start"
@@ -117,7 +117,7 @@
     </div>
     <main class="container">
         <!-- secciones de texto sobre nosotros y sobre la provincia -->
-        <section class="row py-4">
+        <section class="row py-4" id="about">
             <article class="col-12 col-lg-6">
                 <h3>Sobre nosotros</h3>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio neque voluptatem facere iste eaque natus corrupti nesciunt dolorem suscipit ea, in deserunt sed porro, tenetur doloribus praesentium consequatur totam! Rerum numquam accusantium soluta consequuntur atque cum vitae eligendi odit sequi. A voluptatum veniam ad, impedit harum iste sint illum obcaecati eveniet quidem debitis repellendus molestiae esse, maxime repudiandae error ea</p>
@@ -128,7 +128,7 @@
             </article>
         </section>
         <!-- Servicios generales ofrecidos por el complejo -->
-        <section>
+        <section id="servicios">
             <h2 class="text-center">Servicios</h2>
             <div class="row">
                 <article class="col-12 col-md-6 col-lg-4">
@@ -177,8 +177,7 @@
                 </ul>
             </div >
             <div class="col-12 col-md-4 text-center">
-                <i class="far fa-building"></i>
-                <h4>Departamentos Vincagua</h4>
+                <img src="assets/logo-svg.svg" width="100px">
             </div>
             <div class="col-12 col-md-4">
                 <h5>Suscribite a nuestro newsletter</h5>

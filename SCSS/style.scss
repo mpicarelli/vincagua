@@ -1,35 +1,39 @@
+//COLORES
+$azul-osc:                 rgb(17, 60, 128);
+$celeste:                  #d4dce9;
+$dark:                     rgb(27, 27, 27);
+
+$colors:(//MERGE CON BS
+"azul-osc":             $azul-osc,
+"celeste":               $celeste,
+"dark":                     $dark,
+);
+
+$primary:                   $azul-osc;
+$secondary:                 $celeste;
+$dark:                      $dark;
+
+
+ //LINKS
+$link-color:                $secondary;
+$link-decoration:           underline;
+$link-hover-color:          $primary;
+$link-hover-decoration:     underline;
+
+//FUENTES
+h1, h2, h3, h4, a {font-family: "OSWALD", sans-serif;}
+p                           {font-family: "roboto", sans-serif;}
+
+$base-font-size: 1rem;
+
+//mixim
+.centrador{
+    position: absolute;
+    bottom:   0;
+    left:     0;
+    right:    0;
+    top:      0;
+}
+
 @import "bootstrap/bootstrap.scss";
-
-h1, h2, h3, h4, a {
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-body{
-    background-color: #d4dce9;
-}
-
-header{
-    padding-bottom: 0.2rem;
-}
-
-.fa-building{
-    font-size: 3rem;
-    line-height: 3.5rem;
-}
-
-.form-fechas{
-    background-color: #f2f2f2;
-    border: 0.5px solid gray;
-    margin: 0 0.2rem;
-    box-shadow: 1px 1px gray;
-    height: 50px;
-    .fecha-in, .fecha-out, .select-huespedes{
-        box-shadow: 1px 1px gray;
-        text-align: center;
-    }
-    .reserva{
-        background-color: rgb(24, 24, 110);
-        a {color: white;}
-    }
-}
+@import "style-mods.scss";
