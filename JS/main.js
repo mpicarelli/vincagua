@@ -87,11 +87,20 @@ function verifCapacidad (e){
 
 // Fecha minima en fecha de llegada → hoy;
 let today = moment().format("YYYY-MM-D");
-document.querySelector('#checkin').setAttribute('min', today)
-
-
+console.log(today)
+/* document.querySelector('#checkin').setAttribute('min', today) */
 
 // tomo valores de checkin
+$('.datepickerIN').pickadate({
+    min: new Date(),
+    monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+    weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mier', 'Jue', 'Vie', 'Sab'],
+    today: 'hoy',
+    clear: 'borrar',
+    formatSubmit: 'yyyy/mm/dd'
+})
+
+
 let checkIn = document.querySelector('#checkin');
 checkIn.addEventListener('input',guardaCheckIn);
 
