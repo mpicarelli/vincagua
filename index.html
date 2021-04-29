@@ -64,9 +64,14 @@
                     </div>
                 </div>
                 <div class="p-2 d-flex flex-column flex-fill fecha-out">
-                    <label for="checkout">Fecha de salida:</label>
-                    <input type="text" id="checkout" name="trip-end"
-                    max="2022-31-12" placeholder="elija una fecha" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+                    <div>
+                        <label for="checkout">Fecha de salida:</label>
+                        <label for="checkout"><i class="far fa-calendar-alt"></i></label>
+                    </div>
+                    <div style="position: relative;">
+                        <input type="text" id="checkout" name="trip-end" class="datepickerOUT"
+                        max="2022-31-12" placeholder="elija una fecha"  required>
+                    </div> 
                 </div>
                 <div class=" d-flex flex-column form-input p-2 flex-fill select-huespedes" >
                     <label for="huespedes">Huespedes</label>

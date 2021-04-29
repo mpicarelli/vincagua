@@ -84,40 +84,65 @@ function verifCapacidad (e){
     localStorage.setItem("huespedes",JSON.stringify(huespedElegidos));
 }
 
+//USO DE PICKDATE.JS 
 
-// Fecha minima en fecha de llegada → hoy;
-let today = moment().format("YYYY-MM-D");
-console.log(today)
-/* document.querySelector('#checkin').setAttribute('min', today) */
+//date picker de entrada
 
-// tomo valores de checkin
-$('.datepickerIN').pickadate({
+let from_$input = $('.datepickerIN').pickadate({
+    //TRADUCCION A ESPAÑOL
+    monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+    weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mier', 'Jue', 'Vie', 'Sab'],
+    today: 'hoy',
+    clear: 'borrar',
+    formatSubmit: 'yyyy/mm/dd',
+    //FECHA MINIMA DE LLEGADA = HOY
     min: new Date(),
+}), from_picker = from_$input.pickadate('picker')
+
+
+//date picker de salida
+
+let to_$input = $('.datepickerOUT').pickadate({
+    //TRADUCCION A ESPAÑOL
     monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
     weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mier', 'Jue', 'Vie', 'Sab'],
     today: 'hoy',
     clear: 'borrar',
     formatSubmit: 'yyyy/mm/dd'
+}), to_picker = to_$input.pickadate('picker')
+
+// Check if there’s a “from” or “to” date to start with.
+if (from_picker.get('value') ) {
+    to_picker.set('min', from_picker.get('select'))
+}
+if (to_picker.get('value') ) {
+    from_picker.set('max', to_picker.get('select'))
+}
+
+// When something is selected, update the “from” and “to” limits.
+from_picker.on('set', function(e) {
+    if (e.select ) {
+        to_picker.set('min', from_picker.get('select'))    
+    } else if ( 'clear' in e ) {
+        to_picker.set('min', false)
+    }
 })
 
+to_picker.on('set', function(e) {
+    if (e.select ) {
+        from_picker.set('max', to_picker.get('select'))
+    } else if ( 'clear' in e ) {
+        from_picker.set('max', false)
+    }
+})
 
-let checkIn = document.querySelector('#checkin');
-checkIn.addEventListener('input',guardaCheckIn);
-
-
-function guardaCheckIn(e){
+//GUARDO LOS VALORES DE CHECK IN Y CHECK OUT EN LOCAL STORAGE PARA USAR EN LA SIGUIENTE PAGINA
+$('.datepickerIN').change(function(e){
     let checkInValue =e.target.value;
     localStorage.setItem("checkin", JSON.stringify(checkInValue));
-    //uso el checkInvalue para darle un minimo a la fecha de checkout
-    document.querySelector('#checkout').setAttribute('min', checkInValue)
-}
-
-// tomo valores de checkout
-const checkOut = document.querySelector('#checkout');
-checkOut.addEventListener('input',guardaCheckOut);
-
-function guardaCheckOut (e) {
-    const checkOutValue = e.target.value;
+})
+    
+$('.datepickerOUT').change(function(e){
+    let checkOutValue =e.target.value;
     localStorage.setItem("checkout", JSON.stringify(checkOutValue));
-}
-
+})

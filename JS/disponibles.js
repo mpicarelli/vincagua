@@ -14,13 +14,13 @@ document.querySelector('#cantHuespedes').appendChild(h5Huesped)
 
 
 //DOM CHECK IN
-let showCheckInM = moment(showCheckIn , "YYYY/MM/DD")
+let showCheckInM = moment(showCheckIn , "D MMM YYYY")
 let h6CheckIn = document.createElement('h6');
 h6CheckIn.textContent = `${showCheckInM.format("dddd D [de] MMMM YYYY")}`;
 document.querySelector('#check-in').appendChild(h6CheckIn)
 
 //DOM CHECK OUT
-let showCheckOutM = moment(showCheckOut , "YYYY/MM/DD")
+let showCheckOutM = moment(showCheckOut , "D MMM YYYY")
 let h6CheckOut = document.createElement('h6');
 h6CheckOut.textContent = `${showCheckOutM.format("dddd D [de] MMMM YYYY")}`;
 document.querySelector('#check-out').appendChild(h6CheckOut)
