@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+    <div id="arriba"></div>
     <header>
         <!-- barra de navegacion -->
         <div class="container" id="navForm">
@@ -29,10 +30,10 @@
                 <div class="collapse navbar-collapse" id="navegacion">                
                     <ul class="navbar-nav w-100 align-items-center justify-content-around">
                         <li class="nav-item d-flex align-items-center text-center">
-                            <a class="nav-link active" href="index.html">inicio</a>
+                            <a class="nav-link active inicio" href="index.html">inicio</a>
                         </li>
                         <li class="nav-item d-flex align-items-center text-center">
-                            <a class="nav-link" href="#about">Sobre nosotros</a>
+                            <a class="nav-link about" href="#about">Sobre nosotros</a>
                         </li>
                         <li class="nav-item d-flex align-items-center text-center">
                             <a class="nav-link d-none d-md-block active" href="#">
@@ -40,10 +41,10 @@
                             </a>
                         </li>
                         <li class="nav-item d-flex align-items-center text-center">
-                            <a class="nav-link" href="#servicios">servicios</a>
+                            <a class="nav-link servicios" href="#servicios">servicios</a>
                         </li>
-                        <li class="nav-item d-flex align-items-center text-center">
-                            <a class="nav-link" href="#deptos">departamentos</a>
+                        <li class="nav-item d-flex align-items-center text-center ">
+                            <a class="nav-link departamentos" href="#deptos">departamentos</a>
                         </li>
                     </ul>
                 </div>
@@ -55,7 +56,7 @@
                 <div   class="p-2 d-flex flex-column flex-fill fecha-in ">
                     <label for="checkin">Fecha de llegada:</label>
                     <div style="position: relative;" class="d-flex justify-content-between">
-                        <input type="text" id="checkin" name="trip-start" class="datepickerIN"
+                        <input type="text" id="checkin" name="trip-start" class="datepickerIN flex-fill mx-2"
                         max="2022-31-12" placeholder="elija una fecha"  required>
                         <label for="checkin"><i class="far fa-calendar-alt "></i></label>
                     </div>
@@ -65,14 +66,14 @@
                         <span>Fecha de salida:</span>
                     </div>
                     <div style="position: relative;" class="d-flex justify-content-between">
-                        <input type="text" id="checkout" name="trip-end" class="datepickerOUT"
+                        <input type="text" id="checkout" name="trip-end" class="datepickerOUT flex-fill mx-2"
                         max="2022-31-12" placeholder="elija una fecha"  required>
                         <label for="checkout"><i class="far fa-calendar-alt"></i></label>
                     </div> 
                 </div>
                 <div class=" d-flex flex-column form-input p-2 flex-fill select-huespedes" >
                     <label for="huespedes">Huespedes</label>
-                    <input type="number" min="1" max="5" class="" name="huespedes" id="huespedes" required>
+                    <input type="number" min="1" max="5" class="flex-fill mx-2" name="huespedes" id="huespedes" required>
                 </div>
                 <!-- transformarlo en un submit y quiza hacer que se resalte cuando completo fechas -->
                     <button id="buscar" type="submit" class="form-input p-2 reserva align-items-center">
@@ -167,7 +168,7 @@
         </section>
         <!-- Departamentos -->
         <section>
-            <h2 class="text-center">DEPARTAMENTOS</h2>
+            <h2 class="text-center depto-title">DEPARTAMENTOS</h2>
             <div id="deptos" class="row row-cols-1 row-cols-md-3">
                 <!-- aca van los deptos creados con JS -->
             </div>

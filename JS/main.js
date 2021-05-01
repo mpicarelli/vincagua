@@ -64,7 +64,7 @@ departamentos.forEach( dto => {
         
         let alink   = document.createElement('a');
         divCard.appendChild(alink);
-        alink.setAttribute('href','#');
+        alink.setAttribute('href','#arriba');
         alink.setAttribute('class','btn btn-primary reservar');
         alink.textContent="RESERVAR"
         alink.setAttribute('data-id', `${dto.numero}`)
@@ -111,7 +111,7 @@ let to_$input = $('.datepickerOUT').pickadate({
     formatSubmit: 'yyyy/mm/dd'
 }), to_picker = to_$input.pickadate('picker')
 
-// Check if there’s a “from” or “to” date to start with.
+// verificar si ya hay fecha de inicio o fin
 if (from_picker.get('value') ) {
     to_picker.set('min', from_picker.get('select'))
 }
@@ -119,7 +119,7 @@ if (to_picker.get('value') ) {
     from_picker.set('max', to_picker.get('select'))
 }
 
-// When something is selected, update the “from” and “to” limits.
+//Cuando ya se selecciono, actualiza los limites de inicio y fin.
 from_picker.on('set', function(e) {
     if (e.select ) {
         to_picker.set('min', from_picker.get('select'))    
@@ -145,4 +145,58 @@ $('.datepickerIN').change(function(e){
 $('.datepickerOUT').change(function(e){
     let checkOutValue =e.target.value;
     localStorage.setItem("checkout", JSON.stringify(checkOutValue));
+})
+
+
+
+
+//animaciones
+//a departaentos
+$('nav li .departamentos').click(function(e){
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $("#deptos").offset().top - 240},
+        1000, function(){
+            $('#deptos article').fadeIn(1000)
+            $('.depto-title').fadeIn(1000)
+
+        })
+})
+
+//a servicios
+$('nav li .servicios').click(function(e){
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $("#servicios").offset().top - 200},
+        1000)
+})
+
+//a about us
+$('nav li .about').click(function(e){
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $("#about").offset().top - 190},
+        1000)
+})
+
+//volver arriba apretando el inicio en nav
+$('nav li .inicio').click(function(e){
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $("#arriba").offset().top},
+        1000)
+})
+
+$('nav li .inicio').click(function(e){
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $("#arriba").offset().top},
+        1000)
+})
+
+$('.reservar').click(function(e){
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $("#arriba").offset().top},
+        1000)
 })

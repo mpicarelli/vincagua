@@ -7222,3 +7222,6 @@ header {
       border: none; }
       header #formFechas #buscar p {
         text-transform: uppercase; }
+
+#deptos article, .depto-title, #totalReserva, #formReserva {
+  display: none; }

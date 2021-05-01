@@ -77,25 +77,8 @@ deptoCapOK.forEach( dto => {
     alink.textContent="RESERVAR"
     alink.setAttribute('data-id', `${dto.numero}`)
     
-    document.querySelector("#deptos").appendChild(article)
+    document.querySelector("#deptos2").appendChild(article)
 })
-
-//calculo de monto a pagar
-
-const deptosDisponibles = document.querySelector('#deptos');
-deptosDisponibles.addEventListener('click', elijoDepto);
-
-// veo que boton toque
-function elijoDepto(e){
-    e.preventDefault();
-    if(e.target.classList.contains('reservar')){
-        const cardDepto = e.target.parentElement.parentElement.parentElement;
-        obtenerPrecioDepto(cardDepto);
-    }
-    //para que despues de dado el evento de tocar el boton reservar en un depto se muestre el boton de confirmar que te lleva al formulario
-    showConfirmar();
-}
-
 
 // me da el precio y el ID del depto (por ahora el ID no lo uso)
 function obtenerPrecioDepto(card){ 
@@ -113,7 +96,7 @@ function montoTotal (precioDepto){
     muestraTotal (total)
 } 
 
-// muestra el total de la reserva
+// crea el DOM con el total de la reserva
 function muestraTotal(total){
     document.querySelector('#totalReserva').innerHTML = ''
     let h5TotalReserva = document.createElement('h5');
@@ -121,15 +104,23 @@ function muestraTotal(total){
     document.querySelector('#totalReserva').appendChild(h5TotalReserva)
 }
 
-//muestro boton de confirmar reserva
-function showConfirmar(){
-    let confirmar = document.createElement('a');
-    confirmar.setAttribute('class', 'btn btn-primary my-3 confirmarReserva');
-    confirmar.textContent = "CONFIRMAR"
-    document.querySelector('#totalReserva').appendChild(confirmar)
-    //formulario de confirmacion
+//mostrar precio final y boton de reserva
+$('.reservar').click((e)=>{
+    e.preventDefault()
+    const cardDepto = e.target.parentElement.parentElement.parentElement;
+    obtenerPrecioDepto(cardDepto);
+    //para que muestre el boton confirmar luego de elegir depto
+    $('#totalReserva').append(
+        `<a class = 'btn btn-primary my-3 confirmarReserva'>
+        CONFIRMAR
+        </a>`
+    )
+    .slideDown('slow')
     showFormConfirmar();
-}
+})
+
+
+
 //CUADRO DE CONFIRMACION DE RESERVA
 function showFormConfirmar(){
     $('.confirmarReserva').click(()=> {
@@ -168,6 +159,6 @@ function showFormConfirmar(){
         </div>
         <button class="btn btn-primary" type="submit">Confirmar Reserva</button>
     </form> 
-        `)
+        `).fadeIn(1000)
     })
 }
