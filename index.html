@@ -8,7 +8,6 @@
     <!-- FUENTES -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <!-- Estilos-->
@@ -17,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <header class="bg-white">
+    <header>
         <!-- barra de navegacion -->
         <div class="container" id="navForm">
             <nav class="navbar navbar-expand-md navbar-light ">
@@ -53,39 +52,35 @@
         <!-- barra de reservas -->
         <div id="formFechas">
             <form action="reserva.html" method="GET" class="d-flex justify-content-between px-0">
-                <div class="p-2 d-flex flex-column flex-fill fecha-in ">
-                    <div>
-                        <label for="checkin">Fecha de llegada:</label>
-                        <label for="checkin"><i class="far fa-calendar-alt"></i></label>
-                    </div>
-                    <div style="position: relative;">
+                <div   class="p-2 d-flex flex-column flex-fill fecha-in ">
+                    <label for="checkin">Fecha de llegada:</label>
+                    <div style="position: relative;" class="d-flex justify-content-between">
                         <input type="text" id="checkin" name="trip-start" class="datepickerIN"
                         max="2022-31-12" placeholder="elija una fecha"  required>
+                        <label for="checkin"><i class="far fa-calendar-alt "></i></label>
                     </div>
                 </div>
                 <div class="p-2 d-flex flex-column flex-fill fecha-out">
                     <div>
-                        <label for="checkout">Fecha de salida:</label>
-                        <label for="checkout"><i class="far fa-calendar-alt"></i></label>
+                        <span>Fecha de salida:</span>
                     </div>
-                    <div style="position: relative;">
+                    <div style="position: relative;" class="d-flex justify-content-between">
                         <input type="text" id="checkout" name="trip-end" class="datepickerOUT"
                         max="2022-31-12" placeholder="elija una fecha"  required>
+                        <label for="checkout"><i class="far fa-calendar-alt"></i></label>
                     </div> 
                 </div>
                 <div class=" d-flex flex-column form-input p-2 flex-fill select-huespedes" >
                     <label for="huespedes">Huespedes</label>
-                    <select class="" name="huespedes" id="huespedes" required>
-                        <option value="0">#</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
+                    <input type="number" min="1" max="5" class="" name="huespedes" id="huespedes" required>
                 </div>
                 <!-- transformarlo en un submit y quiza hacer que se resalte cuando completo fechas -->
-                    <button type="submit w-25" class="form-input p-2 reserva">Buscar Departamento</button>
+                    <button id="buscar" type="submit" class="form-input p-2 reserva align-items-center">
+                        <p class="m-0">Buscar Departamento</p>
+                        <label for="buscar m-0">
+                            <i class="fas fa-search"></i>
+                        </label>
+                    </button>
             </form>
         </div>
     </header>

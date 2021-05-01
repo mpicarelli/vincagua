@@ -24,24 +24,32 @@ header{
             &.active{color: $primary;}
         }
     }
-}
-
-.fa-building{
-    font-size: 3rem;
-    line-height: 3.5rem;
-}
-
-#formFechas{
-    background-color: #f2f2f2;
-    border: 0.5px solid gray;
-    margin: 0 0.2rem;
-    box-shadow: 1px 1px gray;
-    .fecha-in, .fecha-out, .select-huespedes{
-        box-shadow: 1px 1px gray;
-        text-align: center;
-    }
-    .reserva{
-        background-color: #113c80;
-        a {color: white;}
+    #formFechas{
+        background-color:#f2f2f2;
+        form > div, button {
+            border: 1px solid darken(#f2f2f2 , 20);
+            box-shadow: 0 1px rgba($color: #000000, $alpha: 0.5);
+            color: $dark;
+            margin-bottom: 0;
+            &:hover{
+                color: $primary;
+            }
+        }
+        .select-huespedes{
+            max-width: 100px;
+        }
+        #buscar{
+            background-color: #113c80;
+            min-width: 15em;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: none;
+            p{
+                text-transform: uppercase;
+            }
+        }
     }
 }

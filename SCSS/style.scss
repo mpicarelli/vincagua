@@ -1,5 +1,5 @@
 //COLORES
-$azul-osc:                 rgb(17, 60, 128);
+$azul-osc:                 rgb(6, 89, 138);
 $celeste:                  #d4dce9;
 $dark:                     rgb(27, 27, 27);
 
@@ -21,8 +21,8 @@ $link-hover-color:          $primary;
 $link-hover-decoration:     underline;
 
 //FUENTES
-h1, h2, h3, h4, a {font-family: "OSWALD", sans-serif;}
-p                           {font-family: "roboto", sans-serif;}
+h1, h2, h3, h4, a           {font-family: "OSWALD", sans-serif;}
+p, label                    {font-family: "roboto", sans-serif;}
 
 $base-font-size: 1rem;
 
