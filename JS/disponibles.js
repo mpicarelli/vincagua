@@ -116,49 +116,82 @@ $('.reservar').click((e)=>{
         </a>`
     )
     .slideDown('slow')
+    $('html, body').animate({
+        scrollTop: $("#totalReserva").offset().top},
+        1000)
     showFormConfirmar();
 })
 
-
-
 //CUADRO DE CONFIRMACION DE RESERVA
 function showFormConfirmar(){
-    $('.confirmarReserva').click(()=> {
+    $('.confirmarReserva').click((e)=> {
         //vacio lo que ya estaba por si lo apretan  2 veces
         $('#formReserva').html('')
         //formulario de reserva
         $('#formReserva').append(`
         <h4>Confirma tu reserva </h4>
-        <form action="#">
-        <div class="row" >
-            <div class="col col-md-6">
-                <h5>Datos de contacto</h5>
-                <label for="name">Nombre*</label>
-                <input type="text" class="form-control form-control-sm" id="nombre" placeholder="Roy" required >
-                <label for="apellido">Apellido*</label>
-                <input type="text" class="form-control form-control-sm" id="apellido" placeholder="Mustang" required >
-                <label for="tel">Telefono*</label>
-                <input type="number" class="form-control form-control-sm" id="tel" placeholder="1198765432" required >
-                <label for="email">Correo Electronico*</label>
-                <input type="email" class="form-control form-control-sm" id="email" placeholder="coronelRoy@alquimista.com" required >     
-            </div>
-            <div class="col col-md-6">
-                <h5>Datos de Pago</h5>
-                <label for="nameTarjeta">Nombre (como aparece en la tarjeta)*</label>
-                <input type="text" class="form-control form-control-sm" id="nombreTarjeta" placeholder="Roy" required >
-                <label for="cardNumber">Numero de Tarjeta*</label>
-                <input type="number" class="form-control form-control-sm mb-2" id="cardNumber" placeholder="4567 9875 3215 9875" required >
-                <label for="">Fecha vencimiento</label>
-                <div class="row">
-                    <input type="number" class="form-control form-control-sm col-6 mb-2" placeholder="MM" name="" required="">
-                    <input type="number" class="form-control form-control-sm col-6 mb-2" placeholder="YY" name="" required="">
+        <form>
+            <div class="row">
+                <div class="col col-md-6">
+                    <h5>Datos de contacto</h5>
+                    <label for="name">Nombre*</label>
+                    <input type="text" class="form-control form-control-sm" id="nombre" placeholder="Roy" required >
+                    <label for="apellido">Apellido*</label>
+                    <input type="text" class="form-control form-control-sm" id="apellido" placeholder="Mustang" required >
+                    <label for="tel">Telefono*</label>
+                    <input type="number" class="form-control form-control-sm" id="tel" placeholder="1198765432" required >
+                    <label for="email">Correo Electronico*</label>
+                    <input type="email" class="form-control form-control-sm" id="email" placeholder="coronelRoy@alquimista.com" required >     
                 </div>
-                <label for="codSeg">CVV*</label>
-                <input type="number" class="form-control form-control-sm" id="codSeg" placeholder="###" required >
+                <div class="col col-md-6">
+                    <h5>Datos de Pago</h5>
+                    <label for="nameTarjeta">Nombre (como aparece en la tarjeta)*</label>
+                    <input type="text" class="form-control form-control-sm" id="nombreTarjeta" placeholder="Roy" required >
+                    <label for="cardNumber">Numero de Tarjeta*</label>
+                    <input type="number" class="form-control form-control-sm mb-2" id="cardNumber" placeholder="4567 9875 3215 9875" required >
+                    <label for="">Fecha vencimiento</label>
+                    <div class="row">
+                        <input type="number" class="form-control form-control-sm col-6 mb-2" placeholder="MM" name="" required="">
+                        <input type="number" class="form-control form-control-sm col-6 mb-2" placeholder="YY" name="" required="">
+                    </div>
+                    <label for="codSeg">CVV*</label>
+                    <input type="number" class="form-control form-control-sm" id="codSeg" placeholder="###" required >
+                </div>
             </div>
-        </div>
-        <button class="btn btn-primary" type="submit">Confirmar Reserva</button>
-    </form> 
-        `).fadeIn(1000)
+            <button id='lalala' type="submit" class="btn btn-primary" data-toggle="modal" data-target="#OKReserva">
+                Confirmar Reserva
+            </button>
+        </form>
+        `).fadeIn(1200)
+        $('html, body').animate({
+            scrollTop: $("#formReserva").offset().top},
+            1000)
+        finalfinal();
+    })
+}
+function finalfinal(){
+    $('#lalala').click(()=>{
+        $('#formReserva').append(
+            `
+            <div class="modal fade" id="OKReserva" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Felicitaciones</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Ha confirmado su reserva con nosotros. En la brevedad nos contactaremos con ud.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `
+        )
     })
 }

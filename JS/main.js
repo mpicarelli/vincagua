@@ -167,8 +167,8 @@ $('nav li .departamentos').click(function(e){
 $('nav li .servicios').click(function(e){
     e.preventDefault();
     $('html, body').animate({
-        scrollTop: $("#servicios").offset().top - 200},
-        1000)
+        scrollTop: $("#servicios").offset().top - 240},
+        700)
 })
 
 //a about us
@@ -176,7 +176,7 @@ $('nav li .about').click(function(e){
     e.preventDefault();
     $('html, body').animate({
         scrollTop: $("#about").offset().top - 190},
-        1000)
+        500)
 })
 
 //volver arriba apretando el inicio en nav
