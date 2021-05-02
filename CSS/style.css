@@ -7223,5 +7223,5 @@ header {
       header #formFechas #buscar p {
         text-transform: uppercase; }
 
-#deptos article, .depto-title, #totalReserva, #formReserva, #servicios {
+#deptos article, .depto-title, #totalReserva, #formReserva {
   display: none; }
