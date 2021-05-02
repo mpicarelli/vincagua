@@ -124,7 +124,7 @@ $('.reservar').click((e)=>{
 
 //CUADRO DE CONFIRMACION DE RESERVA
 function showFormConfirmar(){
-    $('.confirmarReserva').click((e)=> {
+    $('.confirmarReserva').click(()=> {
         //vacio lo que ya estaba por si lo apretan  2 veces
         $('#formReserva').html('')
         //formulario de reserva
