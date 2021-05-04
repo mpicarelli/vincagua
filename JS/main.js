@@ -31,7 +31,8 @@ departamentos.forEach( dto => {
         
         let img     = document.createElement('img')
         div.appendChild(img);
-        img.setAttribute('src',`https://via.placeholder.com/300x250?text=depto${dto.numero}`)
+        img.setAttribute('src',`../assets/deptos/depto${dto.numero}.jpg`)
+        img.setAttribute('alt','foto del departamento ${dto.numero}')
         img.setAttribute('class','card-img-top')
         
         let divCard = document.createElement('div');

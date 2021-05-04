@@ -35,5 +35,9 @@ $base-font-size: 1rem;
     top:      0;
 }
 
+//para animacion en JS
+#deptos article, .depto-title, #totalReserva, #formReserva{
+    display: none;
+}
 @import "bootstrap/bootstrap.scss";
 @import "style-mods.scss";

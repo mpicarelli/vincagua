@@ -33,11 +33,19 @@ header{
             margin-bottom: 0;
             &:hover{
                 color: $primary;
+                font-weight: bold;
+            }
+            label:hover{
+                cursor: pointer;
+            }
+            input{
+                &:hover, &:focus{
+                    outline: none;
+                    border-color: $primary ;
+                }
             }
         }
-        .select-huespedes{
-            max-width: 100px;
-        }
+
         #buscar{
             background-color: #113c80;
             min-width: 15em;
@@ -50,11 +58,20 @@ header{
             p{
                 text-transform: uppercase;
             }
+            &:hover{
+                background-color: rgba($primary, 0.75);
+                font-size: 1.05rem;
+            }
         }
     }
 }
 
-#deptos article, .depto-title, #totalReserva, #formReserva{
-    display: none;
+.carousel-item img{
+    object-fit: cover; 
+    height:     600px; 
 }
 
+
+.footer2{
+    background-color: $primary;
+}

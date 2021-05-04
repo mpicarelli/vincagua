@@ -11,6 +11,9 @@ p, label {
   right: 0;
   top: 0; }
 
+#deptos article, .depto-title, #totalReserva, #formReserva {
+  display: none; }
+
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -7208,9 +7211,13 @@ header {
       color: #1b1b1b;
       margin-bottom: 0; }
       header #formFechas form > div:hover, header #formFechas button:hover {
-        color: #06598a; }
-    header #formFechas .select-huespedes {
-      max-width: 100px; }
+        color: #06598a;
+        font-weight: bold; }
+      header #formFechas form > div label:hover, header #formFechas button label:hover {
+        cursor: pointer; }
+      header #formFechas form > div input:hover, header #formFechas form > div input:focus, header #formFechas button input:hover, header #formFechas button input:focus {
+        outline: none;
+        border-color: #06598a; }
     header #formFechas #buscar {
       background-color: #113c80;
       min-width: 15em;
@@ -7222,6 +7229,13 @@ header {
       border: none; }
       header #formFechas #buscar p {
         text-transform: uppercase; }
+      header #formFechas #buscar:hover {
+        background-color: rgba(6, 89, 138, 0.75);
+        font-size: 1.05rem; }
 
-#deptos article, .depto-title, #totalReserva, #formReserva {
-  display: none; }
+.carousel-item img {
+  object-fit: cover;
+  height: 600px; }
+
+.footer2 {
+  background-color: #06598a; }

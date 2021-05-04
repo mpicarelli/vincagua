@@ -54,31 +54,29 @@
         <div id="formFechas">
             <form action="reserva.html" method="GET" class="d-flex justify-content-between px-0">
                 <div   class="p-2 d-flex flex-column flex-fill fecha-in ">
-                    <label for="checkin">Fecha de llegada:</label>
+                    <label class="pl-3" for="checkin">Fecha de llegada:</label>
                     <div style="position: relative;" class="d-flex justify-content-between">
                         <input type="text" id="checkin" name="trip-start" class="datepickerIN flex-fill mx-2"
-                        max="2022-31-12" placeholder="elija una fecha"  required>
+                        max="2022-31-12" placeholder="elija una fecha" required>
                         <label for="checkin"><i class="far fa-calendar-alt "></i></label>
                     </div>
                 </div>
-                <div class="p-2 d-flex flex-column flex-fill fecha-out">
-                    <div>
-                        <span>Fecha de salida:</span>
-                    </div>
+                <div   class="p-2 d-flex flex-column flex-fill fecha-in ">
+                    <label class="pl-3" for="checkout">Fecha de salida:</label>
                     <div style="position: relative;" class="d-flex justify-content-between">
-                        <input type="text" id="checkout" name="trip-end" class="datepickerOUT flex-fill mx-2"
+                        <input type="text" id="checkout" name="trip-end" class="datepickerOUT flex-fill mx-2
                         max="2022-31-12" placeholder="elija una fecha"  required>
-                        <label for="checkout"><i class="far fa-calendar-alt"></i></label>
-                    </div> 
+                        <label for="checkout"><i class="far fa-calendar-alt "></i></label>
+                    </div>
                 </div>
                 <div class=" d-flex flex-column form-input p-2 flex-fill select-huespedes" >
-                    <label for="huespedes">Huespedes</label>
+                    <label class="pl-3" for="huespedes">Huespedes</label>
                     <input type="number" min="1" max="5" class="flex-fill mx-2" name="huespedes" id="huespedes" required>
                 </div>
                 <!-- transformarlo en un submit y quiza hacer que se resalte cuando completo fechas -->
                     <button id="buscar" type="submit" class="form-input p-2 reserva align-items-center">
                         <p class="m-0">Buscar Departamento</p>
-                        <label for="buscar m-0">
+                        <label class="m-0" for="buscar">
                             <i class="fas fa-search"></i>
                         </label>
                     </button>
@@ -94,21 +92,21 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://via.placeholder.com/1000x500?text=imagen1" class="d-block w-100" alt="...">
+                <img src="assets/slide/aconcagua.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h1>Departamentos Vincagua</h1>
                     <p>Ciudad de Mendoza - Mendoza - Argentina</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="https://via.placeholder.com/1000x500?text=imagen2" class="d-block w-100" alt="...">
+                <img src="assets/slide/dique.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h2>Aventura y montaña</h2>
                     <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="https://via.placeholder.com/1000x500?text=imagen3" class="d-block w-100" alt="...">
+                <img src="assets/slide/copas.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h2>Servicios</h2>
                     <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -206,7 +204,7 @@
                 <button class="boton" type="submit" name="enviar">Suscribirse</button>
             </div>
         </div>
-        <div class="footer2 bg-secondary">
+        <div class="footer2">
             <p class="text-light py-3 mb-0 text-center">Vincagua Departamentos - Todos los derechos reservados</p>
         </div>
     </footer>
