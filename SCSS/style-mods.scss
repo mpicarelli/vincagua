@@ -66,11 +66,64 @@ header{
     }
 }
 
-.carousel-item img{
-    object-fit: cover; 
-    height:     600px; 
+.slider-ppal{
+    //slider principal de altura constante
+    height:             500px;
+    #CarouselPpal {
+        .carousel-img img{
+            object-fit: cover; 
+            height:     500px; 
+        }
+        .carousel-flecha{
+            position:     absolute;
+            top:          0;
+            bottom:       0;
+            margin:       auto;
+            height:       50px;
+            width:        50px;  
+            line-height:  50px;
+            font-size:    $base-font-size * 2;
+            display:      block;
+            z-index:      10;
+            text-align:   center;
+            &.prev{left:  2%;}
+            &.next{right: 2%;}
+        }
+        .carousel-caption{
+            position:        absolute;
+            top:             0;
+            bottom:          0;
+            left: 0;
+            right: 0;
+            text-decoration: none;
+            div {//animacion del caption
+                background-color:   rgba($dark, 0.8);
+                animation-name:     fadeInUp;
+                animation-delay:    0s;
+                animation-duration: 1.5s;
+                h1, h2{@extend      .titulos-grandes;}
+                p     {padding:     0 2rem;}
+            }
+        }
+        a.carousel-caption{
+            &:hover  {transform: scale(1.1);}
+            p{&:hover{color:     $primary;}}
+        }
+    }
 }
-
+//animacion para los slides
+@keyframes fadeInUp {
+    from {
+    opacity:           0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform:         translate3d(0, 100%, 0);
+    }
+    to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform:         translate3d(0, 0, 0);
+    }
+}
 
 .footer2{
     background-color: $primary;

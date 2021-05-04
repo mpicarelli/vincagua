@@ -26,6 +26,10 @@ p, label                    {font-family: "roboto", sans-serif;}
 
 $base-font-size: 1rem;
 
+
+//SIZES EXTRA
+$sizes: (90: 90%, 70: 70%);
+
 //mixim
 .centrador{
     position: absolute;
@@ -34,9 +38,15 @@ $base-font-size: 1rem;
     right:    0;
     top:      0;
 }
-
+//extends
+.titulos-grandes{
+    font-weight:    bold;
+    letter-spacing: 3px;
+    font-size:      $base-font-size * 2;
+    text-transform: uppercase;
+}
 //para animacion en JS
-#deptos article, .depto-title, #totalReserva, #formReserva{
+#totalReserva, #formReserva{
     display: none;
 }
 @import "bootstrap/bootstrap.scss";

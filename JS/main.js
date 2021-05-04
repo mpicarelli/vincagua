@@ -154,14 +154,10 @@ $('.datepickerOUT').change(function(e){
 //animaciones
 //a departaentos
 $('nav li .departamentos').click(function(e){
-    e.preventDefault();
+e.preventDefault();
     $('html, body').animate({
         scrollTop: $("#deptos").offset().top - 240},
-        1000, function(){
-            $('#deptos article').fadeIn(1000)
-            $('.depto-title').fadeIn(1000)
-
-        })
+        1000)
 })
 
 //a servicios
@@ -169,8 +165,8 @@ $('nav li .servicios').click(function(e){
     e.preventDefault();
     $('html, body').animate({
         scrollTop: $("#servicios").offset().top - 190},
-        1000)
-        .fadeIn(1000)
+        1000)/* 
+        .fadeIn(1000) */
 })
 
 //a about us
