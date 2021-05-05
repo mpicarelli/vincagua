@@ -55,9 +55,7 @@ header{
             align-items: center;
             justify-content: space-between;
             border: none;
-            p{
-                text-transform: uppercase;
-            }
+            text-transform: uppercase;
             &:hover{
                 background-color: rgba($primary, 0.75);
                 font-size: 1.05rem;
@@ -97,12 +95,19 @@ header{
             right: 0;
             text-decoration: none;
             div {//animacion del caption
-                background-color:   rgba($dark, 0.8);
+                background-color:   rgba(177, 177, 177, 0.7);
                 animation-name:     fadeInUp;
                 animation-delay:    0s;
                 animation-duration: 1.5s;
-                h1, h2{@extend      .titulos-grandes;}
-                p     {padding:     0 2rem;}
+                h1, h2{
+                    @extend      .titulos-grandes;
+                    text-shadow: 2px 2px $dark;
+                }
+                p     {
+                    padding:     0 2rem;
+                    color: $dark;
+                    font-weight: bold;
+                }
             }
         }
         a.carousel-caption{

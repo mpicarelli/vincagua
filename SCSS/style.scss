@@ -21,7 +21,8 @@ $link-hover-color:          $primary;
 $link-hover-decoration:     underline;
 
 //FUENTES
-h1, h2, h3, h4, a           {font-family: "OSWALD", sans-serif;}
+h1, h2, h3, h4, a           {font-family: "OSWALD", sans-serif;
+                            text-transform: uppercase;}
 p, label                    {font-family: "roboto", sans-serif;}
 
 $base-font-size: 1rem;

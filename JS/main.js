@@ -67,7 +67,7 @@ departamentos.forEach( dto => {
         divCard.appendChild(alink);
         alink.setAttribute('href','#arriba');
         alink.setAttribute('class','btn btn-primary reservar');
-        alink.textContent="RESERVAR"
+        alink.textContent="ir a Reservar"
         alink.setAttribute('data-id', `${dto.numero}`)
         
         document.querySelector("#deptos").appendChild(article)
@@ -138,17 +138,21 @@ to_picker.on('set', function(e) {
 })
 
 //GUARDO LOS VALORES DE CHECK IN Y CHECK OUT EN LOCAL STORAGE PARA USAR EN LA SIGUIENTE PAGINA
-$('.datepickerIN').change(function(e){
-    let checkInValue =e.target.value;
-    localStorage.setItem("checkin", JSON.stringify(checkInValue));
-})
-    
-$('.datepickerOUT').change(function(e){
-    let checkOutValue =e.target.value;
-    localStorage.setItem("checkout", JSON.stringify(checkOutValue));
-})
 
-
+document.querySelector('#buscar').addEventListener('click',function (e){
+    let checkInValue = document.querySelector('.datepickerIN').value;
+    let checkOutValue = document.querySelector('.datepickerOUT').value;
+    //condicional para que no continue a la otra pagina sin ingresar las fechas
+    if(checkInValue && checkOutValue ){
+        localStorage.setItem("checkin", JSON.stringify(checkInValue));
+        localStorage.setItem("checkout", JSON.stringify(checkOutValue)); 
+        e.target.parentElement.setAttribute('action','reserva.html')
+        
+    } else {
+        alert('Por favor, ingrese fecha de llegada y salida para poder continuar')
+        e.target.parentElement.setAttribute('action','#')
+    }
+})
 
 
 //animaciones
@@ -165,8 +169,7 @@ $('nav li .servicios').click(function(e){
     e.preventDefault();
     $('html, body').animate({
         scrollTop: $("#servicios").offset().top - 190},
-        1000)/* 
-        .fadeIn(1000) */
+        1000)
 })
 
 //a about us
@@ -216,7 +219,7 @@ function cargoCardsTestimonial() {
                 HTMLCard += `  <div class="card mr-2">
                                 <img class="card-img-top img-testimonial" src="${contenidoJSON[i].picture.large}">
                                     <div class="card-body text-center">
-                                        <p class="card-text-testimonial">"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim a doloremque quidem nemo fugiat nulla deserunt ducimus porro, pariatur vel voluptates illo, modi debitis aperiam sit beatae dolor! Earum, in."</p>
+                                        <p class="card-text-testimonial">"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim a doloremque quidem nemo fugiat nulla deserunt ducimus porro, pariatur vel voluptates illo"</p>
                                         <span class="card-i-testimonial"><span><i class="fa fa-star" aria-hidden="true"></i></span><span><i class="fa fa-star" aria-hidden="true"></i></span><span><i class="fa fa-star" aria-hidden="true"></i></span><span><i class="fa fa-star" aria-hidden="true"></i></span><span><i class="fa fa-star" aria-hidden="true"></i></span></span>
                                         <h5 class="card-title-testimonial">${contenidoJSON[i].name.first} ${contenidoJSON[i].name.last}</h5>
                                         <h6 class="card-city-testimonial">${contenidoJSON[i].location.city}, ${contenidoJSON[i].location.country}</h6>

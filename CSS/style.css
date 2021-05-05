@@ -1,5 +1,6 @@
 h1, h2, h3, h4, a {
-  font-family: "OSWALD", sans-serif; }
+  font-family: "OSWALD", sans-serif;
+  text-transform: uppercase; }
 
 p, label {
   font-family: "roboto", sans-serif; }
@@ -7244,9 +7245,8 @@ header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border: none; }
-      header #formFechas #buscar p {
-        text-transform: uppercase; }
+      border: none;
+      text-transform: uppercase; }
       header #formFechas #buscar:hover {
         background-color: rgba(6, 89, 138, 0.75);
         font-size: 1.05rem; }
@@ -7280,12 +7280,16 @@ header {
     right: 0;
     text-decoration: none; }
     .slider-ppal #CarouselPpal .carousel-caption div {
-      background-color: rgba(27, 27, 27, 0.8);
+      background-color: rgba(177, 177, 177, 0.7);
       animation-name: fadeInUp;
       animation-delay: 0s;
       animation-duration: 1.5s; }
+      .slider-ppal #CarouselPpal .carousel-caption div h1, .slider-ppal #CarouselPpal .carousel-caption div h2 {
+        text-shadow: 2px 2px #1b1b1b; }
       .slider-ppal #CarouselPpal .carousel-caption div p {
-        padding: 0 2rem; }
+        padding: 0 2rem;
+        color: #1b1b1b;
+        font-weight: bold; }
   .slider-ppal #CarouselPpal a.carousel-caption:hover {
     transform: scale(1.1); }
   .slider-ppal #CarouselPpal a.carousel-caption p:hover {
