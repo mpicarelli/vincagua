@@ -21,8 +21,9 @@ $link-hover-color:          $primary;
 $link-hover-decoration:     underline;
 
 //FUENTES
-h1, h2, h3, h4, a           {font-family: "OSWALD", sans-serif;
-                            text-transform: uppercase;}
+h1, h2, h3, h4, h5, a       {font-family: "OSWALD", sans-serif;
+                            text-transform: uppercase;
+                            }
 p, label                    {font-family: "roboto", sans-serif;}
 
 $base-font-size: 1rem;
@@ -31,15 +32,20 @@ $base-font-size: 1rem;
 //SIZES EXTRA
 $sizes: (90: 90%, 70: 70%);
 
-//mixim
+//extends
 .centrador{
     position: absolute;
     bottom:   0;
     left:     0;
-    right:    0;
-    top:      0;
+    right:    60%;
+    top:      95%;
 }
-//extends
+.img-specs{
+    object-fit: cover;
+    width:      100%;
+    height:     100%;
+}
+
 .titulos-grandes{
     font-weight:    bold;
     letter-spacing: 3px;

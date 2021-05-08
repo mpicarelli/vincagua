@@ -1,4 +1,4 @@
-h1, h2, h3, h4, a {
+h1, h2, h3, h4, h5, a {
   font-family: "OSWALD", sans-serif;
   text-transform: uppercase; }
 
@@ -9,8 +9,13 @@ p, label {
   position: absolute;
   bottom: 0;
   left: 0;
-  right: 0;
-  top: 0; }
+  right: 60%;
+  top: 95%; }
+
+.img-specs, #deptos article .img-wrapper img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%; }
 
 .titulos-grandes, .slider-ppal #CarouselPpal .carousel-caption div h1, .slider-ppal #CarouselPpal .carousel-caption div h2 {
   font-weight: bold;
@@ -7216,7 +7221,8 @@ header {
     text-transform: uppercase;
     font-size: 1.2rem;
     font-weight: bold;
-    color: rgba(6, 89, 138, 0.75); }
+    color: rgba(6, 89, 138, 0.75);
+    transition: background-color 0.15s ease-in-out , scale 0.15s ease-in-out; }
     header #navForm .nav-item .nav-link:hover, header #navForm .nav-item .navbar-text:hover {
       transform: scale(1.1);
       color: #06598a; }
@@ -7228,15 +7234,16 @@ header {
       border: 1px solid #bfbfbf;
       box-shadow: 0 1px rgba(0, 0, 0, 0.5);
       color: #1b1b1b;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      transition: color 0.15s ease-in-out; }
       header #formFechas form > div:hover, header #formFechas button:hover {
-        color: #06598a;
-        font-weight: bold; }
+        color: #06598a; }
       header #formFechas form > div label:hover, header #formFechas button label:hover {
         cursor: pointer; }
-      header #formFechas form > div input:hover, header #formFechas form > div input:focus, header #formFechas button input:hover, header #formFechas button input:focus {
-        outline: none;
-        border-color: #06598a; }
+      header #formFechas form > div input, header #formFechas button input {
+        transition: color 0.15s ease-in-out; }
+        header #formFechas form > div input:hover, header #formFechas form > div input:focus, header #formFechas button input:hover, header #formFechas button input:focus {
+          border-color: #06598a; }
     header #formFechas #buscar {
       background-color: #113c80;
       min-width: 15em;
@@ -7246,10 +7253,10 @@ header {
       align-items: center;
       justify-content: space-between;
       border: none;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      transition: background-color 0.15s ease-in-out; }
       header #formFechas #buscar:hover {
-        background-color: rgba(6, 89, 138, 0.75);
-        font-size: 1.05rem; }
+        background-color: #043959; }
 
 .slider-ppal {
   height: 500px; }
@@ -7305,5 +7312,35 @@ header {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0); } }
 
-.footer2 {
-  background-color: #06598a; }
+#deptos article {
+  position: relative; }
+  #deptos article .data {
+    padding: 1rem;
+    position: relative;
+    z-index: 2;
+    background-color: white; }
+    #deptos article .data .category {
+      margin-top: -2.5rem;
+      display: block;
+      margin-bottom: 0.5rem; }
+      #deptos article .data .category span {
+        padding: 0.35rem 0.85rem;
+        font-size: 1.3rem;
+        line-height: 1.5;
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+        background-color: #06598a;
+        text-transform: uppercase;
+        border-radius: 0.25rem; }
+  #deptos article .img-wrapper {
+    display: block;
+    flex: 1;
+    width: 100%;
+    overflow: hidden; }
+    #deptos article .img-wrapper > * {
+      transition: all 500ms; }
+    #deptos article .img-wrapper:hover img {
+      filter: brightness(1.5);
+      filter: contrast(0.5);
+      transform: scale(1.1); }

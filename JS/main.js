@@ -19,6 +19,11 @@ departamentos.push (new Depto (5, 5, 3500));
 localStorage.setItem("departamentos", JSON.stringify(departamentos));
 
 //DOM DEPARTAMENTOS
+$(function(){
+    $.ajax('../JSON/deptos.json').done((data, status, jqXHR)=>{
+        console.log(data);
+    })
+});
 
 //armo tarjetas con cada departamento:
 departamentos.forEach( dto => {
@@ -70,7 +75,7 @@ departamentos.forEach( dto => {
         alink.textContent="ir a Reservar"
         alink.setAttribute('data-id', `${dto.numero}`)
         
-        document.querySelector("#deptos").appendChild(article)
+       // document.querySelector("#deptos").appendChild(article)
 })
 
 //tomo valor del select huespedes

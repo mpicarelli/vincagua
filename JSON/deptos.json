@@ -1,0 +1,54 @@
+{
+    "chachacha":[
+        {
+            "foto" : "../asstes/deptos/depto1.jpg",
+            "nombre" : "chardonay",
+            "ocupantes" : 2,
+            "superficie" : 25,
+            "ambientes" : "monoambiente",
+            "camas" : "1 matrimonial",
+            "precio" : 2500,
+            "numero" : 1
+        },
+        {
+            "foto" : "../asstes/deptos/depto2.jpg",
+            "nombre" : "torrontes",
+            "ocupantes" : 2,
+            "superficie" : 25,
+            "ambientes" : "monoambiente",
+            "camas" : "1 matrimonial",
+            "precio" : 2500,
+            "numero" : 2
+        },
+        {
+            "foto" : "../asstes/deptos/depto3.jpg",
+            "nombre" : "malbec",
+            "ocupantes" : 3,
+            "superficie" : 35,
+            "ambientes" : "2 ambientes",
+            "camas" : "1 matrimonial y 1 sofa-cama",
+            "precio" : 3000,
+            "numero" : 3
+        },
+        {
+            "foto" : "../asstes/deptos/depto4.jpg",
+            "nombre" : "cabernet",
+            "ocupantes" : 4,
+            "superficie" : 40,
+            "ambientes" : "2 ambientes",
+            "camas" : "1 matrimonial y una marinera",
+            "precio" : 3750,
+            "numero" : 4
+        },
+        {
+            "foto" : "../asstes/deptos/depto5.jpg",
+            "nombre" : "syrah",
+            "ocupantes" : 5,
+            "superficie" : 52,
+            "ambientes" : "3 ambientes",
+            "camas" : "1 matrimonial y 3 camas",
+            "precio" : 4500,
+            "numero" : 5
+        }
+    ]
+}
