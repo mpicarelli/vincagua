@@ -7319,11 +7319,11 @@ header {
     position: relative;
     z-index: 2;
     background-color: white; }
-    #deptos article .data .category {
+    #deptos article .data .nombre {
       margin-top: -2.5rem;
       display: block;
       margin-bottom: 0.5rem; }
-      #deptos article .data .category span {
+      #deptos article .data .nombre span {
         padding: 0.35rem 0.85rem;
         font-size: 1.3rem;
         line-height: 1.5;
