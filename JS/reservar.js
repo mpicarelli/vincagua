@@ -135,8 +135,8 @@ deptoCapOK.forEach( dto =>{
                     //boton reservar
                     let dtoBoton = document.createElement('a');
                     dtoBoton.setAttribute('href','#arriba');
-                    dtoBoton.setAttribute('class', 'btn btn-primary reservar mb-0');
-                    dtoBoton.textContent = "Escoger este departamento"
+                    dtoBoton.setAttribute('class', 'btn btn-primary reservar mb-0 px-4');
+                    dtoBoton.textContent = "Escoger"
                     dtoBoton.setAttribute('data-id', `${dto.numero}`)
                     divFoot.appendChild(dtoBoton);
 
@@ -156,6 +156,7 @@ function obtenerPrecioDepto(card){
 function montoTotal (precioDepto){
     let diff          = showCheckOutM.diff(showCheckInM, "days");
     let total         = diff * precioDepto.precio;
+   // let id            = precioDepto.id;
     muestraTotal (total)
 } 
 
@@ -175,7 +176,7 @@ $('.reservar, .img-wrapper').click((e)=>{
     //para que muestre el boton confirmar luego de elegir depto
     $('#totalReserva').append(
         `<a class = 'btn btn-primary my-3 confirmarReserva'>
-        CONFIRMAR
+        Completar tu Reserva
         </a>`
     )
     .slideDown('slow')
@@ -194,7 +195,7 @@ function showFormConfirmar(){
         $('#formReserva').append(`
         <h4>Confirma tu reserva </h4>
         <form>
-            <div class="row">
+            <div class="row bg-white p-3">
                 <div class="col col-md-6">
                     <h5>Datos de contacto</h5>
                     <label for="name">Nombre*</label>
@@ -208,20 +209,20 @@ function showFormConfirmar(){
                 </div>
                 <div class="col col-md-6">
                     <h5>Datos de Pago</h5>
-                    <label for="nameTarjeta">Nombre (como aparece en la tarjeta)*</label>
+                    <label for="nombreTarjeta">Nombre (como aparece en la tarjeta)*</label>
                     <input type="text" class="form-control form-control-sm" id="nombreTarjeta" placeholder="Roy" required >
                     <label for="cardNumber">Numero de Tarjeta*</label>
                     <input type="number" class="form-control form-control-sm mb-2" id="cardNumber" placeholder="4567 9875 3215 9875" required >
                     <label for="">Fecha vencimiento</label>
                     <div class="row">
-                        <input type="number" class="form-control form-control-sm col-6 mb-2" placeholder="MM" name="" required="">
-                        <input type="number" class="form-control form-control-sm col-6 mb-2" placeholder="YY" name="" required="">
+                        <input type="number" class="form-control form-control-sm col-6 mb-2" placeholder="MM" name="" required="" id='mes'>
+                        <input type="number" class="form-control form-control-sm col-6 mb-2" placeholder="YY" name="" required="" id='anio'>
                     </div>
                     <label for="codSeg">CVV*</label>
                     <input type="number" class="form-control form-control-sm" id="codSeg" placeholder="###" required >
                 </div>
             </div>
-            <button id='lalala' type="submit" class="btn btn-primary" data-toggle="modal" data-target="#OKReserva">
+            <button id='confirmar' type="submit" class="btn btn-primary" data-toggle="modal" data-target="#OKReserva">
                 Confirmar Reserva
             </button>
         </form>
@@ -233,28 +234,42 @@ function showFormConfirmar(){
     })
 }
 function finalfinal(){
-    $('#lalala').click(()=>{
-        $('#formReserva').append(
-            `
-            <div class="modal fade" id="OKReserva" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Felicitaciones</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Ha confirmado su reserva con nosotros. En la brevedad nos contactaremos con ud.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+    $('#confirmar').click((e)=>{
+        e.preventDefault()
+        let nombre = document.querySelector('#nombre').value;
+        let apellido = document.querySelector('#apellido').value;
+        let tel = document.querySelector('#tel').value;
+        let email = document.querySelector('#email').value;
+        let nombreTarjeta = document.querySelector('#nombreTarjeta').value;
+        let cardNumber = document.querySelector('#cardNumber').value;
+        let mes = document.querySelector('#mes').value;
+        let anio = document.querySelector('#anio').value;
+        let codSeg = document.querySelector('#codSeg').value;
+        if(nombre && apellido && tel && email && nombreTarjeta && cardNumber && mes && anio && codSeg){
+            $('#formReserva').append(
+                `
+                <div class="modal fade" id="OKReserva" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Felicitaciones</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Ha confirmado su reserva con nosotros. En la brevedad nos contactaremos con ud.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            `
-        )
+                `
+            )
+        } else {
+            alert('Por favor complete todo los datos del formulario para finalizar su reserva')
+        }
     })
 }

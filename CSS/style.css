@@ -5,13 +5,6 @@ h1, h2, h3, h4, h5, a {
 p, label {
   font-family: "roboto", sans-serif; }
 
-.centrador {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 60%;
-  top: 95%; }
-
 .img-specs, #deptos article .img-wrapper img {
   object-fit: cover;
   width: 100%;
@@ -7222,7 +7215,7 @@ header {
     font-size: 1.2rem;
     font-weight: bold;
     color: rgba(6, 89, 138, 0.75);
-    transition: background-color 0.15s ease-in-out , scale 0.15s ease-in-out; }
+    transition: color 0.15s ease-in-out , scale 0.15s ease-in-out; }
     header #navForm .nav-item .nav-link:hover, header #navForm .nav-item .navbar-text:hover {
       transform: scale(1.1);
       color: #06598a; }
@@ -7241,6 +7234,8 @@ header {
       header #formFechas form > div label:hover, header #formFechas button label:hover {
         cursor: pointer; }
       header #formFechas form > div input, header #formFechas button input {
+        border-radius: 5px;
+        border: 1px solid black;
         transition: color 0.15s ease-in-out; }
         header #formFechas form > div input:hover, header #formFechas form > div input:focus, header #formFechas button input:hover, header #formFechas button input:focus {
           border-color: #06598a; }
@@ -7314,6 +7309,17 @@ header {
 
 #deptos article {
   position: relative; }
+  #deptos article .img-wrapper {
+    display: block;
+    flex: 1;
+    width: 100%;
+    overflow: hidden; }
+    #deptos article .img-wrapper > * {
+      transition: all 500ms; }
+    #deptos article .img-wrapper:hover img {
+      filter: brightness(1.5);
+      filter: contrast(0.5);
+      transform: scale(1.1); }
   #deptos article .data {
     padding: 1rem;
     position: relative;
@@ -7333,14 +7339,45 @@ header {
         background-color: #06598a;
         text-transform: uppercase;
         border-radius: 0.25rem; }
-  #deptos article .img-wrapper {
-    display: block;
-    flex: 1;
-    width: 100%;
-    overflow: hidden; }
-    #deptos article .img-wrapper > * {
-      transition: all 500ms; }
-    #deptos article .img-wrapper:hover img {
-      filter: brightness(1.5);
-      filter: contrast(0.5);
-      transform: scale(1.1); }
+    #deptos article .data div p {
+      font-weight: bold;
+      font-size: 1.15rem;
+      color: #06598a;
+      margin: 0px; }
+
+.sombras {
+  box-shadow: 6px 8px 18px -8px #06598a; }
+
+#opiniones article {
+  box-shadow: 2px 3px 5px #06598a; }
+  #opiniones article .card-i-testimonial {
+    color: gold; }
+  #opiniones article h5 {
+    color: #06598a; }
+
+footer .footer1 li a {
+  font-family: 'roboto', sans-serif;
+  text-transform: initial;
+  color: #1b1b1b;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out; }
+  footer .footer1 li a:hover {
+    cursor: pointer;
+    color: #06598a; }
+
+footer .footer1 a img:hover {
+  transform: scale(1.1); }
+
+footer .footer1 label {
+  font-family: 'oswald', sans-serif;
+  text-transform: uppercase; }
+
+footer .footer1 input {
+  border-radius: 5px;
+  border: 1px solid black;
+  transition: color 0.15s ease-in-out; }
+  footer .footer1 input:hover, footer .footer1 input:focus {
+    border-color: #06598a; }
+
+footer .footer2 {
+  background-color: #1b1b1b; }

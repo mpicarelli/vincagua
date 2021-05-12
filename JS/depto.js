@@ -87,7 +87,7 @@ function construyeDeptos(deptos){
                             spanli4.appendChild(ili4);
                 //div inferior con precio y boton reserva
                 let divFoot = document.createElement('div');    
-                divFoot.setAttribute('class', 'd-flex justify-content-between')
+                divFoot.setAttribute('class', 'd-flex justify-content-between align-items-center')
                 divData.appendChild(divFoot)    
 
                     let pFoot = document.createElement('p');
@@ -105,6 +105,7 @@ function construyeDeptos(deptos){
                     //boton reservar
                     let dtoBoton = document.createElement('a');
                     dtoBoton.setAttribute('href','#arriba');
+                    dtoBoton.setAttribute('id','#coso');
                     dtoBoton.setAttribute('class', 'btn btn-primary reservar mb-0');
                     dtoBoton.textContent = "Ir a reservar"
                     dtoBoton.setAttribute('data-id', `${dto.numero}`)

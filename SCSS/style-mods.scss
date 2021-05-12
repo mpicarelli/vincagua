@@ -1,7 +1,7 @@
+
 body{
     background-color: $secondary;
 }
-
 header{
     background: rgb(255,255,255);
     background: radial-gradient(circle, rgba(255,255,255,1) 29%, rgba(212,220,233,1) 74%, rgba(85,114,159,1) 98%);    top:      0;
@@ -17,8 +17,7 @@ header{
             font-size:       $base-font-size * 1.2;
             font-weight:     bold;
             color: rgba($primary, 0.75);
-            transition: background-color 0.15s ease-in-out ,
-                        scale 0.15s ease-in-out;
+            transition: color 0.15s ease-in-out , scale 0.15s ease-in-out;
             &:hover{
                 transform:  scale(1.1);
                 color:      $primary;
@@ -41,6 +40,8 @@ header{
                 cursor: pointer;
             }
             input{
+                border-radius: 5px;
+                border: 1px solid black;
                 transition: color 0.15s ease-in-out ;
                 &:hover, &:focus{
                     border-color: $primary ;
@@ -137,6 +138,21 @@ header{
 //tarjetas
 #deptos article {
     position: relative;
+    .img-wrapper {
+        display: block;
+        flex: 1;
+        width: 100%;
+        overflow: hidden;
+        img {@extend .img-specs}
+        & > *{transition:  all 500ms;}
+        &:hover{
+            img{
+                filter:    brightness(1.5);
+                filter:    contrast(0.5);
+                transform: scale(1.1);     
+            }
+        }
+    }
     .data {
         padding: 1rem;
         position: relative;
@@ -158,20 +174,62 @@ header{
                 border-radius: 0.25rem;
             }
         }
+        div p{
+            font-weight: bold;
+            font-size: 1.15rem;
+            color: $primary;
+            margin: 0px;
+        }
     }
-    .img-wrapper {
-        display: block;
-        flex: 1;
-        width: 100%;
-        overflow: hidden;
-        img {@extend .img-specs}
-        & > *{transition:  all 500ms;}
-        &:hover{
-            img{
-                filter:    brightness(1.5);
-                filter:    contrast(0.5);
-                transform: scale(1.1);     
+}
+.sombras{
+    box-shadow: 6px 8px 18px -8px $primary;
+}
+#opiniones{
+    article{
+        //border: 1px solid grey;
+        box-shadow: 2px 3px 5px $primary;
+        .card-i-testimonial{
+            color: gold;
+        }
+        h5{
+            color: $primary
+        }
+    }
+}
+
+footer{
+    .footer1{
+        li a{
+            font-family: 'roboto', sans-serif;
+            text-transform: initial;
+            color: $dark;
+            text-decoration: none;
+            transition: color 0.15s ease-in-out ;        
+            &:hover{
+                cursor: pointer;
+                color: $primary;
+                }
+            }
+        a img{
+            &:hover{
+                transform:  scale(1.1);
             }
         }
+            label{
+                font-family: 'oswald', sans-serif;
+                text-transform: uppercase;
+            }
+            input{
+                border-radius: 5px;
+                border: 1px solid black;
+                transition: color 0.15s ease-in-out ;
+                &:hover, &:focus{
+                    border-color: $primary ;
+                }
+            }
+        }
+    .footer2{
+        background-color: $dark;
     }
 }
