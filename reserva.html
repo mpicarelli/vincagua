@@ -29,21 +29,9 @@
                 <div class="collapse navbar-collapse" id="navegacion">                
                     <ul class="navbar-nav w-100 align-items-center justify-content-around">
                         <li class="nav-item d-flex align-items-center text-center">
-                            <a class="nav-link active" href="index.html">inicio</a>
-                        </li>
-                        <li class="nav-item d-flex align-items-center text-center">
-                            <a class="nav-link" href="#about">Sobre nosotros</a>
-                        </li>
-                        <li class="nav-item d-flex align-items-center text-center">
                             <a class="nav-link d-none d-md-block active" href="#">
                                 <img src="assets/logo-svg-wide.svg" width="100px"></i>
                             </a>
-                        </li>
-                        <li class="nav-item d-flex align-items-center text-center">
-                            <a class="nav-link" href="#servicios">servicios</a>
-                        </li>
-                        <li class="nav-item d-flex align-items-center text-center">
-                            <a class="nav-link" href="#deptos">departamentos</a>
                         </li>
                     </ul>
                 </div>
@@ -51,31 +39,34 @@
         </div>
     </header>
     <main>
-        <section class="container">
-            <h2 class="text-center">Complete su reserva</h2>
-            <article id="cuadroReserva">
-                <h5>Estadia</h5>
-                <div class="d-flex justify-content-around">
-                    <div id="check-in">
-                        <h6>Check In</h6>
+        <section class="detalle-reserva">
+            <h2 class="titulo-reserva text-light">Complete su reserva</h2>
+            <div class="container my-3">
+                <article id="cuadroReserva" class="py-3">
+                    <h5 class="text-center">Detalles de su estadia</h5>
+                    <div class="d-flex justify-content-around datos-estadia pt-3">
+                        <div id="check-in">
+                            <h6 class="text-center">Check In</h6>
+                            
+                        </div>
+                        <div id="check-out">
+                            <h6 class="text-center" >Check Out</h6>
+                            
+                        </div>
+                        <div id="cantHuespedes">
+                            <H6 class="text-center">Huespedes</H6>
                         
+                        </div>
                     </div>
-                    <div id="check-out">
-                        <h6 >Check Out</h6>
-                        
-                    </div>
-                    <div id="cantHuespedes">
-                        <H6>Huespedes:</H6>
-                    
-                    </div>
-                </div>
-                <hr>
-            </article>
-            <h5>Por favor, elija uno de los siguientes departamentos para poder continuar su reserva</h5>
-            <div id="deptos" class="row row-cols-1 row-cols-md-3">
+                </article>
+            </div>
+        </section>
+        <section class="container dom-depto">
+            <h6 class="texto-elija-dto">Por favor, elija uno de los siguientes departamentos para poder continuar su reserva</h6>
+            <div id="deptos" class="row row-cols-1 row-cols-md-3 mb-3">
                 <!-- aca van los deptos creados con JS y filtrados por disponibles -->
             </div>
-            <div id="totalReserva">
+            <div id="totalReserva" class="rounded d-flex align-items-center justify-content-between">
             <!-- aca va el total de la reserva y el boton confirmar -->
             </div>
         </section>
@@ -83,32 +74,31 @@
     <section id="formReserva" class="container p-3" >
 
     </section>
-
-<!-- Button trigger modal -->
-
-
-    <footer>
-        <div class="footer1 container-fluid bg-light row m-0">
+    <footer class="mt-3">
+        <div class="footer1 container-fluid bg-light row m-0 justify-content-between align-items-center p-3">
             <div class="col-12 col-md-4">
-                <h5>Contactanos</h5>
-                <ul>
-                    <li>Telefono</li>
-                    <li>Whatsapp</li>
-                    <li>Direccion</li>
-                    <li>Mail</li>
+                <h5 class="text-primary">Contactanos</h5>
+                <ul class="fa-ul">
+                    <li><a href="#"><span class="fa-li"><i class="fas fa-phone"></i></span>Telefono</a> +54 0261 4321123</li>
+                    <li><a href="#"><span class="fa-li"><i class="fab fa-whatsapp"></i></span>Whatsapp</a> +54 9 261 15123456</li>
+                    <li><a href="#"><span class="fa-li"><i class="fas fa-map-marker-alt"></i></span>Direccion</a> Calle Falsa 123, Mdz, Arg</li>
+                    <li><a href="#"><span class="fa-li"><i class="fas fa-at"></i></span>Mail</a> reservas@vincagua.com.ar</li>
                 </ul>
             </div >
             <div class="col-12 col-md-4 text-center">
-                <img src="assets/logo-svg.svg" width="100px">
+                <a href="index.html">
+                    <img src="assets/logo-svg-wide.svg" width="120px"></i>
+                </a>
             </div>
-            <div class="col-12 col-md-4">
-                <h5>Suscribite a nuestro newsletter</h5>
-                <label for="newsletter"></label>
+            <div class="col-12 col-md-4 text-right">
+                <h5 class="text-primary">Suscribite a nuestro newsletter</h5>
                 <input type="mail" id="newsletter" name="noticias">
-                <button class="boton" type="submit" name="enviar">Suscribirse</button>
+                <label for="newsletter">
+                    <button class="btn btn-primary reservar mb-0" type="submit" name="enviar">Suscribirse</button>
+                </label>
             </div>
         </div>
-        <div class="footer2 bg-secondary">
+        <div class="footer2">
             <p class="text-light py-3 mb-0 text-center">Vincagua Departamentos - Todos los derechos reservados</p>
         </div>
     </footer>

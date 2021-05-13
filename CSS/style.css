@@ -5,6 +5,9 @@ h1, h2, h3, h4, h5, a {
 p, label {
   font-family: "roboto", sans-serif; }
 
+.sombras, .dom-depto #totalReserva {
+  box-shadow: 6px 8px 18px -8px #06598a; }
+
 .img-specs, #deptos article .img-wrapper img {
   object-fit: cover;
   width: 100%;
@@ -7202,8 +7205,6 @@ body {
 
 header {
   background: white;
-  background: radial-gradient(circle, white 29%, #d4dce9 74%, #55729f 98%);
-  top: 0;
   left: 0;
   right: 0;
   position: sticky;
@@ -7341,12 +7342,9 @@ header {
         border-radius: 0.25rem; }
     #deptos article .data div p {
       font-weight: bold;
-      font-size: 1.15rem;
+      font-size: 1rem;
       color: #06598a;
       margin: 0px; }
-
-.sombras {
-  box-shadow: 6px 8px 18px -8px #06598a; }
 
 #opiniones article {
   box-shadow: 2px 3px 5px #06598a; }
@@ -7354,6 +7352,47 @@ header {
     color: gold; }
   #opiniones article h5 {
     color: #06598a; }
+
+.detalle-reserva .titulo-reserva {
+  line-height: 3.5rem;
+  left: 15%;
+  padding-left: 5%;
+  background: white;
+  background: linear-gradient(328deg, white 0%, #06598a 51%);
+  border-bottom: 2px solid #06598a; }
+
+.detalle-reserva article {
+  background-color: white;
+  border-radius: 15px; }
+
+.dom-depto h6 {
+  font-size: 1.3rem; }
+
+.dom-depto #totalReserva {
+  background-color: white; }
+
+#formReserva label {
+  color: rgba(27, 27, 27, 0.75);
+  margin-bottom: 0px;
+  transition: color 0.15s ease-in-out; }
+  #formReserva label:hover, #formReserva label:focus {
+    color: #06598a; }
+
+#formReserva input {
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid black;
+  transition: color 0.15s ease-in-out;
+  color: #06598a;
+  font-size: 1.1rem; }
+  #formReserva input:hover, #formReserva input:focus {
+    border-color: #06598a; }
+
+#formReserva button {
+  font-family: 'oswald', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  margin-top: 1rem; }
 
 footer .footer1 li a {
   font-family: 'roboto', sans-serif;

@@ -4,7 +4,6 @@ body{
 }
 header{
     background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,1) 29%, rgba(212,220,233,1) 74%, rgba(85,114,159,1) 98%);    top:      0;
     left:     0;
     right:    0;
     position: sticky;
@@ -176,18 +175,15 @@ header{
         }
         div p{
             font-weight: bold;
-            font-size: 1.15rem;
+            font-size: 1rem;
             color: $primary;
             margin: 0px;
         }
     }
 }
-.sombras{
-    box-shadow: 6px 8px 18px -8px $primary;
-}
+
 #opiniones{
     article{
-        //border: 1px solid grey;
         box-shadow: 2px 3px 5px $primary;
         .card-i-testimonial{
             color: gold;
@@ -197,6 +193,59 @@ header{
         }
     }
 }
+
+.detalle-reserva{
+    .titulo-reserva{
+        line-height: 3.5rem;
+        left: 15%;
+        padding-left: 5%;
+        background: rgb(255,255,255);
+        background: linear-gradient(328deg, rgba(255,255,255,1) 0%, rgba(6,89,138,1) 51%);
+        border-bottom: 2px solid $primary;
+    }
+    article{
+        background-color: white;
+        border-radius: 15px;
+    }
+}
+    .dom-depto{
+        h6{
+            font-size: 1.3rem;
+        }  
+        #totalReserva{
+        background-color: white;
+        @extend .sombras;
+    }
+   
+}
+#formReserva{
+    label{
+        color: rgba($dark, 0.75);
+        margin-bottom: 0px;
+        transition: color 0.15s ease-in-out ;
+        &:hover, &:focus{
+            color: $primary ;
+        }
+    }
+    input{
+        margin-bottom: 0.5rem;
+        border-radius: 5px;
+        border: 1px solid black;
+        transition: color 0.15s ease-in-out ;
+        color: $primary;
+        font-size: 1.1rem;
+        &:hover, &:focus{
+            border-color: $primary ;
+        }
+    }
+    button{
+        font-family: 'oswald', sans-serif;
+        text-transform: uppercase;
+        font-size: 1.25rem;
+        margin-top: 1rem;
+    }
+}
+
 
 footer{
     .footer1{
