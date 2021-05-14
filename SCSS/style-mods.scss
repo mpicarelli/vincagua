@@ -1,22 +1,22 @@
-
 body{
     background-color: $secondary;
 }
+
 header{
     background: rgb(255,255,255);
-    left:     0;
-    right:    0;
-    position: sticky;
-    z-index:  100;
+    left:           0;
+    right:          0;
+    z-index:        100;
     padding-bottom: 0.2rem;
+    //emncabezado
     #navForm .nav-item {
         .nav-link, .navbar-text{
             text-decoration: none;
             text-transform:  uppercase;
             font-size:       $base-font-size * 1.2;
             font-weight:     bold;
-            color: rgba($primary, 0.75);
-            transition: color 0.15s ease-in-out , scale 0.15s ease-in-out;
+            color:           rgba($primary, 0.75);
+            transition:      color 0.15s ease-in-out , scale 0.15s ease-in-out;
             &:hover{
                 transform:  scale(1.1);
                 color:      $primary;
@@ -24,49 +24,39 @@ header{
             &.active{color: $primary;}
         }
     }
+    //formulario de ingreso de fecha y huespedes
     #formFechas{
-        background-color:#f2f2f2;
+        background-color:    #f2f2f2;
         form > div, button {
-            border: 1px solid darken(#f2f2f2 , 20);
-            box-shadow: 0 1px rgba($color: #000000, $alpha: 0.5);
-            color: $dark;
-            margin-bottom: 0;
-            transition: color 0.15s ease-in-out ;         
-            &:hover{
-                color: $primary;
-            }
-            label:hover{
-                cursor: pointer;
-            }
-            input{
-                border-radius: 5px;
-                border: 1px solid black;
-                transition: color 0.15s ease-in-out ;
-                &:hover, &:focus{
-                    border-color: $primary ;
-                }
-            }
+            border:           1px solid darken(#f2f2f2 , 20);
+            box-shadow:       1px rgba( #000000, 0.5);
+            color:            $dark;
+            margin-bottom:    0;
+            transition:       color 0.15s ease-in-out ;         
+            &:hover{ color:   $primary;}
+            label:hover{cursor: pointer;}
+            input{ @extend .inputs;}
         }
-
+        //boton buscar depto
         #buscar{
-            background-color: #113c80;
-            min-width: 15em;
-            color: white;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border: none;
-            text-transform: uppercase;
-            transition: background-color 0.15s ease-in-out;
+            background-color: $primary;
+            color:            white;
+            font-weight:      bold;
+            display:          flex;
+            align-items:      center;
+            justify-content:  space-between;
+            border:           none;
+            text-transform:   uppercase;
+            transition:       background-color 0.15s ease-in-out;
+            line-height:      62px;
             &:hover{
                 background-color: darken($primary, 10);
-                //font-size: 1.05rem;
             } 
         }
     }
 }
-//transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+//stilos para el carousel
 .slider-ppal{
     //slider principal de altura constante
     height:             500px;
@@ -94,8 +84,8 @@ header{
             position:        absolute;
             top:             0;
             bottom:          0;
-            left: 0;
-            right: 0;
+            left:            0;
+            right:           0;
             text-decoration: none;
             div {//animacion del caption
                 background-color:   rgba(177, 177, 177, 0.7);
@@ -106,9 +96,9 @@ header{
                     @extend      .titulos-grandes;
                     text-shadow: 2px 2px $dark;
                 }
-                p     {
+                p{
                     padding:     0 2rem;
-                    color: $dark;
+                    color:       $dark;
                     font-weight: bold;
                 }
             }
@@ -119,6 +109,7 @@ header{
         }
     }
 }
+
 //animacion para los slides
 @keyframes fadeInUp {
     from {
@@ -137,10 +128,11 @@ header{
 //tarjetas
 #deptos article {
     position: relative;
+    //imagen de tarjetas
     .img-wrapper {
-        display: block;
-        flex: 1;
-        width: 100%;
+        display:  block;
+        flex:     1;
+        width:    100%;
         overflow: hidden;
         img {@extend .img-specs}
         & > *{transition:  all 500ms;}
@@ -152,133 +144,133 @@ header{
             }
         }
     }
+    //datos de cada tarjeta
     .data {
-        padding: 1rem;
-        position: relative;
-        z-index: 2;
-        background-color: white;
+        padding:                  1rem;
+        position:                 relative;
+        z-index:                  2;
+        background-color:         white;
+        //nombre del departamento
         .nombre {
-            margin-top: -2.5rem;
-            display: block;
-            margin-bottom: 0.5rem;
+            margin-top:           -2.5rem;
+            display:              block;
+            margin-bottom:        0.5rem;
             span {
-                padding: 0.35rem 0.85rem;
-                font-size: 1.3rem;
-                line-height: 1.5;
-                display: inline-block;
-                text-decoration: none;
-                color: white;
+                padding:          0.35rem 0.85rem;
+                font-size:        $base-font-size * 1.3;
+                line-height:      1.5;
+                display:          inline-block;
+                text-decoration:  none;
+                color:          white;
                 background-color: $primary;
-                text-transform: uppercase;
-                border-radius: 0.25rem;
+                text-transform:   uppercase;
+                border-radius:    0.25rem;
             }
         }
+        //precio
         div p{
-            font-weight: bold;
-            font-size: 1rem;
-            color: $primary;
-            margin: 0px;
+            font-weight:          bold;
+            font-size:            $base-font-size;
+            color:                $primary;
+            margin:               0px;
         }
     }
 }
 
+//estilos de las opiniones de huespedes API
 #opiniones{
     article{
         box-shadow: 2px 3px 5px $primary;
-        .card-i-testimonial{
-            color: gold;
-        }
-        h5{
-            color: $primary
-        }
+        .card-i-testimonial{color: gold;}
+        h5                 {color: $primary}
     }
 }
 
+//PAGINA RESERVA
 .detalle-reserva{
+    //titulo de la pagina con fondo gradiente
     .titulo-reserva{
-        line-height: 3.5rem;
-        left: 15%;
-        padding-left: 5%;
-        background: rgb(255,255,255);
-        background: linear-gradient(328deg, rgba(255,255,255,1) 0%, rgba(6,89,138,1) 51%);
-        border-bottom: 2px solid $primary;
+        line-height:     3.5rem;
+        left:            15%;
+        padding-left:    5%;
+        background:      rgb(255,255,255);
+        background:      linear-gradient(328deg, rgba(255,255,255,1) 0%, rgba(6,89,138,1) 51%);
+        border-bottom:   2px solid $primary;
     }
+    //estilo del cuadro con los datos de la reserva
     article{
         background-color: white;
-        border-radius: 15px;
+        border-radius:    15px;
     }
 }
-    .dom-depto{
-        h6{
-            font-size: 1.3rem;
-        }  
+
+//seccion con los departamentos y el totalizador de la reserva
+.dom-depto{
+    //texto antes de las tarjetas con los deptos
+        h6{font-size:    $base-font-size * 1.3;}  
+        //totalizador de la reserva
         #totalReserva{
         background-color: white;
         @extend .sombras;
     }
-   
 }
+
+//estilos del formulario de reserva
 #formReserva{
     label{
-        color: rgba($dark, 0.75);
-        margin-bottom: 0px;
+        color:            rgba($dark, 0.75);
+        margin-bottom:    0px;
         transition: color 0.15s ease-in-out ;
         &:hover, &:focus{
-            color: $primary ;
+            color:        $primary ;
         }
     }
     input{
-        margin-bottom: 0.5rem;
-        border-radius: 5px;
-        border: 1px solid black;
-        transition: color 0.15s ease-in-out ;
-        color: $primary;
-        font-size: 1.1rem;
-        &:hover, &:focus{
-            border-color: $primary ;
-        }
+        @extend .inputs;
+        margin-bottom:    0.5rem;
+        color:            $primary;
+        font-size:        1.1rem;
     }
     button{
-        font-family: 'oswald', sans-serif;
-        text-transform: uppercase;
-        font-size: 1.25rem;
-        margin-top: 1rem;
+        font-family:      'oswald', sans-serif;
+        text-transform:   uppercase;
+        font-size:        $base-font-size * 1.3;
+        margin-top:       1rem;
     }
 }
 
+//modal final
+.modal-content{
+    .modal-body p{font-size: $base-font-size * 1.2;}
+}
+
+//estilos del pie de pagina
 
 footer{
+    //foter blanco
     .footer1{
+        //lista de formas de contacto
         li a{
-            font-family: 'roboto', sans-serif;
-            text-transform: initial;
-            color: $dark;
-            text-decoration: none;
+            font-family:     'roboto', sans-serif;
+            text-transform:   initial;
+            color:            $dark;
+            text-decoration:  none;
             transition: color 0.15s ease-in-out ;        
             &:hover{
-                cursor: pointer;
-                color: $primary;
+                cursor:       pointer;
+                color:        $primary;
                 }
             }
+        //imagen central
         a img{
-            &:hover{
-                transform:  scale(1.1);
-            }
+            &:hover{transform: scale(1.1);}
         }
             label{
-                font-family: 'oswald', sans-serif;
+                font-family:   'oswald', sans-serif;
                 text-transform: uppercase;
             }
-            input{
-                border-radius: 5px;
-                border: 1px solid black;
-                transition: color 0.15s ease-in-out ;
-                &:hover, &:focus{
-                    border-color: $primary ;
-                }
-            }
+            //newsletter
+            input{@extend .inputs}
         }
-    .footer2{
-        background-color: $dark;
-    }
+    .footer2{background-color: $dark;}
 }

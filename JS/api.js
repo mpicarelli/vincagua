@@ -1,6 +1,6 @@
 //USO DE API randomuser
 
-let HTMLCard = ""
+let HTMLCard      = ""
 let contenidoJSON = ""
 
 function cargoCardsTestimonial() {

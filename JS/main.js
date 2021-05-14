@@ -1,11 +1,11 @@
-//DOM DEPARTAMENTOS
+//Llamo al DOM de los deptos
 $(function(){
     $.ajax('../JSON/deptos.json', {
         success: function(data){
-        //funcion para armar DOM deptos
-        construyeDeptos(data.JSONdepto);
-        //funcion para escuchar la input de huespedes
-        tomaCapacidad(data.JSONdepto);
+            //funcion para armar DOM deptos
+            construyeDeptos(data.JSONdepto);
+            //funcion para escuchar la input de huespedes
+            tomaCapacidad(data.JSONdepto);
         }
     })
 });
@@ -16,7 +16,7 @@ function tomaCapacidad(depto){
     const cantHuesped = document.querySelector('#huespedes')
     cantHuesped.addEventListener('input',(e)=>{
         //armo un array con los deptos que se pueden ocupar y lo guardo para usar en la otra pagina
-        const capacidadOK = depto.filter(dto => dto.ocupantes >= e.target.value);
+        const capacidadOK     = depto.filter(dto => dto.ocupantes >= e.target.value);
         const huespedElegidos = e.target.value;
         localStorage.setItem("capacidadOK", JSON.stringify(capacidadOK));
         localStorage.setItem("huespedes",JSON.stringify(huespedElegidos));
@@ -29,11 +29,11 @@ function tomaCapacidad(depto){
 
 let from_$input = $('.datepickerIN').pickadate({
     //TRADUCCION A ESPAÑOL
-    monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+    monthsFull:    ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
     weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mier', 'Jue', 'Vie', 'Sab'],
-    today: 'hoy',
-    clear: 'borrar',
-    formatSubmit: 'yyyy/mm/dd',
+    today:        'hoy',
+    clear:        'borrar',
+    close:        'cerrar',
     //FECHA MINIMA DE LLEGADA = HOY
     min: new Date(),
 }), from_picker = from_$input.pickadate('picker')
@@ -43,10 +43,11 @@ let from_$input = $('.datepickerIN').pickadate({
 
 let to_$input = $('.datepickerOUT').pickadate({
     //TRADUCCION A ESPAÑOL
-    monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+    monthsFull:    ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
     weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mier', 'Jue', 'Vie', 'Sab'],
-    today: 'hoy',
-    clear: 'borrar',
+    today:        'hoy',
+    clear:        'borrar',
+    close:        'cerrar',
     formatSubmit: 'yyyy/mm/dd'
 }), to_picker = to_$input.pickadate('picker')
 
@@ -78,16 +79,16 @@ to_picker.on('set', function(e) {
 //GUARDO LOS VALORES DE CHECK IN Y CHECK OUT EN LOCAL STORAGE PARA USAR EN LA SIGUIENTE PAGINA
 
 document.querySelector('#buscar').addEventListener('click',function (e){
-    let checkInValue = document.querySelector('.datepickerIN').value;
+    let checkInValue  = document.querySelector('.datepickerIN').value;
     let checkOutValue = document.querySelector('.datepickerOUT').value;
     //condicional para que no continue a la otra pagina sin ingresar las fechas
     if(checkInValue && checkOutValue ){
         localStorage.setItem("checkin", JSON.stringify(checkInValue));
         localStorage.setItem("checkout", JSON.stringify(checkOutValue)); 
-        e.target.parentElement.setAttribute('action','reserva.html')
+        e.target.parentElement.setAttribute('action','reserva.html');
         
     } else {
-        alert('Por favor, ingrese fecha de llegada y salida para poder continuar')
-        e.target.parentElement.setAttribute('action','#')
+        alert('Por favor, ingrese fecha de llegada y salida para poder continuar');
+        e.target.parentElement.setAttribute('action','#');
     }
 })

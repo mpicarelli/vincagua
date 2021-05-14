@@ -18,7 +18,7 @@
 </head>
 <body>
     <div id="arriba"></div>
-    <header>
+    <header class="sticky-top">
         <!-- barra de navegacion -->
         <div class="container" id="navForm">
             <nav class="navbar navbar-expand-md navbar-light ">
@@ -53,8 +53,8 @@
         </div>
         <!-- barra de reservas -->
         <div id="formFechas">
-            <form action="reserva.html" method="GET" class="d-flex justify-content-between px-0">
-                <div   class="p-2 d-flex flex-column flex-fill fecha-in ">
+            <form action="reserva.html" method="GET" class="row d-flex justify-content-between px-0">
+                <div class="px-3 py-2 d-flex flex-column flex-fill fecha-in col-12 col-md-6 col-lg-3">
                     <label class="pl-3" for="checkin">Fecha de llegada:</label>
                     <div style="position: relative;" class="d-flex justify-content-between">
                         <input type="text" id="checkin" name="trip-start" class="datepickerIN flex-fill mx-2"
@@ -62,7 +62,7 @@
                         <label for="checkin"><i class="far fa-calendar-alt "></i></label>
                     </div>
                 </div>
-                <div   class="p-2 d-flex flex-column flex-fill fecha-in ">
+                <div class="px-3 py-2 d-flex flex-column flex-fill fecha-in col-12 col-md-6 col-lg-3">
                     <label class="pl-3" for="checkout">Fecha de salida:</label>
                     <div style="position: relative;" class="d-flex justify-content-between">
                         <input type="text" id="checkout" name="trip-end" class="datepickerOUT flex-fill mx-2
@@ -70,14 +70,14 @@
                         <label for="checkout"><i class="far fa-calendar-alt "></i></label>
                     </div>
                 </div>
-                <div class=" d-flex flex-column form-input p-2 flex-fill select-huespedes" >
+                <div class=" d-flex flex-column form-input px-3 py-2 flex-fill select-huespedes col-6 col-lg-3" >
                     <label class="pl-3" for="huespedes">Huespedes</label>
                     <input type="number" min="1" max="5" class="flex-fill mx-2" name="huespedes" id="huespedes" required>
                 </div>
-                <button id="buscar" type="submit" class="form-input p-2 reserva align-items-center">
-                    Buscar Departamento
+                <button id="buscar" type="submit" class="form-input px-3 py-2 reserva align-items-center col-6 col-lg-3">
+                    Departamentos
                     <label class="m-0" for="buscar">
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-search px-3"></i>
                     </label>
                 </button>
             </form>
@@ -177,17 +177,18 @@
         <section class="wow animate__animated animate__fadeInUp" data-wow-duration="2s">
             <h2 class="text-center depto-title">DEPARTAMENTOS</h2>
             <div id="deptos" class="row">
-
+                <!-- aca van los departamentos creados con JS -->
             </div>
         </section>
         <section id="testimonial" class="container wow animate__animated animate__fadeInUp" data-wow-duration="2s">
             <h2 class="text-center">Opiniones de nuestros Huespedes</h2>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4" id="opiniones">               
-            <!-- aca van las tarjetas testimoniales -->
+            <!-- aca van las tarjetas testimoniales creadas con JS -->
             </div>
         </section>
     </main>
     <footer>
+        <!-- footer blanco -->
         <div class="footer1 container-fluid bg-light row m-0 justify-content-between align-items-center p-3">
             <div class="col-12 col-md-4">
                 <h5 class="text-primary">Contactanos</h5>
@@ -211,10 +212,12 @@
                 </label>
             </div>
         </div>
+        <!-- footer oscuro -->
         <div class="footer2">
             <p class="text-light py-3 mb-0 text-center">Vincagua Departamentos - Todos los derechos reservados</p>
         </div>
     </footer>
+    <!-- WOW para animaciones -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous"></script>
     <script>
         const wow = new WOW({
@@ -222,14 +225,19 @@
         });
         wow.init();
 	</script>
+    <!-- moment.js para trabajo de fechas -->
     <script src="js/moment-with-locales.min.js"></script>
+    <!-- jquery -->
     <script
         src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
         crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!-- datepicker -->
     <script src="Lightweight-jQuery-Date-Input-Picker/lib/compressed/picker.js"></script>
     <script src="Lightweight-jQuery-Date-Input-Picker/lib/compressed/picker.date.js"></script>
+    <!-- mios -->
     <script src="js/main.js"></script>
     <script src="js/depto.js"></script>
     <script src="js/animaciones.js"></script>

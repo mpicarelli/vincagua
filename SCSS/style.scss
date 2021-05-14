@@ -49,14 +49,14 @@ $sizes: (90: 90%, 70: 70%);
     font-size:      $base-font-size * 2;
     text-transform: uppercase;
 }
-//para animacion en JS
-#totalReserva, #formReserva{
-    display: none;
+
+.inputs{
+    border-radius: 5px;
+    border: 1px solid black;
+    transition: color 0.15s ease-in-out ;
+    &:hover, &:focus{
+        border-color: $primary ;
+    }
 }
-
-
-
-
-
 @import "bootstrap/bootstrap.scss";
 @import "style-mods.scss";

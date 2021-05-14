@@ -19,8 +19,12 @@ p, label {
   font-size: 2rem;
   text-transform: uppercase; }
 
-#totalReserva, #formReserva {
-  display: none; }
+.inputs, header #formFechas form > div input, header #formFechas button input, #formReserva input, footer .footer1 input {
+  border-radius: 5px;
+  border: 1px solid black;
+  transition: color 0.15s ease-in-out; }
+  .inputs:hover, header #formFechas form > div input:hover, header #formFechas button input:hover, #formReserva input:hover, footer .footer1 input:hover, .inputs:focus, header #formFechas form > div input:focus, header #formFechas button input:focus, #formReserva input:focus, footer .footer1 input:focus {
+    border-color: #06598a; }
 
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
@@ -7207,7 +7211,6 @@ header {
   background: white;
   left: 0;
   right: 0;
-  position: sticky;
   z-index: 100;
   padding-bottom: 0.2rem; }
   header #navForm .nav-item .nav-link, header #navForm .nav-item .navbar-text {
@@ -7226,7 +7229,7 @@ header {
     background-color: #f2f2f2; }
     header #formFechas form > div, header #formFechas button {
       border: 1px solid #bfbfbf;
-      box-shadow: 0 1px rgba(0, 0, 0, 0.5);
+      box-shadow: 1px rgba(0, 0, 0, 0.5);
       color: #1b1b1b;
       margin-bottom: 0;
       transition: color 0.15s ease-in-out; }
@@ -7234,15 +7237,8 @@ header {
         color: #06598a; }
       header #formFechas form > div label:hover, header #formFechas button label:hover {
         cursor: pointer; }
-      header #formFechas form > div input, header #formFechas button input {
-        border-radius: 5px;
-        border: 1px solid black;
-        transition: color 0.15s ease-in-out; }
-        header #formFechas form > div input:hover, header #formFechas form > div input:focus, header #formFechas button input:hover, header #formFechas button input:focus {
-          border-color: #06598a; }
     header #formFechas #buscar {
-      background-color: #113c80;
-      min-width: 15em;
+      background-color: #06598a;
       color: white;
       font-weight: bold;
       display: flex;
@@ -7250,7 +7246,8 @@ header {
       justify-content: space-between;
       border: none;
       text-transform: uppercase;
-      transition: background-color 0.15s ease-in-out; }
+      transition: background-color 0.15s ease-in-out;
+      line-height: 62px; }
       header #formFechas #buscar:hover {
         background-color: #043959; }
 
@@ -7380,19 +7377,17 @@ header {
 
 #formReserva input {
   margin-bottom: 0.5rem;
-  border-radius: 5px;
-  border: 1px solid black;
-  transition: color 0.15s ease-in-out;
   color: #06598a;
   font-size: 1.1rem; }
-  #formReserva input:hover, #formReserva input:focus {
-    border-color: #06598a; }
 
 #formReserva button {
   font-family: 'oswald', sans-serif;
   text-transform: uppercase;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   margin-top: 1rem; }
+
+.modal-content .modal-body p {
+  font-size: 1.2rem; }
 
 footer .footer1 li a {
   font-family: 'roboto', sans-serif;
@@ -7410,13 +7405,6 @@ footer .footer1 a img:hover {
 footer .footer1 label {
   font-family: 'oswald', sans-serif;
   text-transform: uppercase; }
-
-footer .footer1 input {
-  border-radius: 5px;
-  border: 1px solid black;
-  transition: color 0.15s ease-in-out; }
-  footer .footer1 input:hover, footer .footer1 input:focus {
-    border-color: #06598a; }
 
 footer .footer2 {
   background-color: #1b1b1b; }
