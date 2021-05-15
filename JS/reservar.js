@@ -58,7 +58,7 @@ function montoTotal (precioDepto){
 function muestraTotal(total){
     document.querySelector('#totalReserva').innerHTML = ''
     let h6TotalReserva = document.createElement('h6');
-        h6TotalReserva.textContent = `El costo total de su estadia es: $${total}.`;
+        h6TotalReserva.textContent = `El costo total de su estadía  es: $${total}.`;
         h6TotalReserva.setAttribute('class','ml-3')
         document.querySelector('#totalReserva').appendChild(h6TotalReserva)
 }
@@ -97,16 +97,16 @@ function showFormConfirmar(){
                         <input type="text" class="form-control form-control-sm" id="nombre" placeholder="Roy" required >
                         <label for="apellido">Apellido*</label>
                         <input type="text" class="form-control form-control-sm" id="apellido" placeholder="Mustang" required >
-                        <label for="tel">Telefono*</label>
+                        <label for="tel">Teléfono*</label>
                         <input type="number" class="form-control form-control-sm" id="tel" placeholder="1198765432" required >
-                        <label for="email">Correo Electronico*</label>
+                        <label for="email">Correo Electrónico*</label>
                         <input type="email" class="form-control form-control-sm" id="email" placeholder="coronelRoy@alquimista.com" required >     
                     </div>
                     <div class="col-12 col-md-6 mt-3">
                         <h5  class="text-center">Datos de Pago</h5>
                         <label for="nombreTarjeta">Nombre (como aparece en la tarjeta)*</label>
                         <input type="text" class="form-control form-control-sm" id="nombreTarjeta" placeholder="Mustang Roy" required >
-                        <label for="cardNumber">Numero de Tarjeta*</label>
+                        <label for="cardNumber">Número de Tarjeta*</label>
                         <input type="tel" class="form-control form-control-sm mb-2" id="cardNumber" placeholder="4567 9875 3215 9875" maxlength="19" pattern="\d*"required >
                         <label for="">Fecha vencimiento</label>
                         <div class="d-flex">
