@@ -3,20 +3,20 @@
 $('nav li .about').click(function(e){
     e.preventDefault();
     $('html, body').animate({
-        scrollTop: $("#about").offset().top - 190}, 500)
+        scrollTop: $("#about").offset().top}, 500)
 })
 
 //a servicios
 $('nav li .servicios').click(function(e){
     e.preventDefault();
     $('html, body').animate({
-        scrollTop: $("#servicios").offset().top - 190}, 1000)
+        scrollTop: $("#servicios").offset().top}, 1000)
 })
 //a departaentos
 $('nav li .departamentos').click(function(e){
     e.preventDefault();
         $('html, body').animate({
-            scrollTop: $("#deptos").offset().top - 240}, 1000)
+            scrollTop: $("#deptos").offset().top - 50}, 1000)
 })
     
 

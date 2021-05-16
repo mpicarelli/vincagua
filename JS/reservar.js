@@ -168,3 +168,10 @@ function finDeReserva(){
         }
     })
 }
+
+//animacion del footer a incio
+$('.footer1 a img').click(function(e){
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $("#arriba").offset().top},1000)
+})
